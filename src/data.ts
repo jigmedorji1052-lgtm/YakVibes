@@ -18,47 +18,28 @@ export const IMAGES = {
 export type HomeTrack = {
   title: string;
   artist: string;
-  image: string;
-  alt: string;
+  videoId: string;
   description: string;
-  tags: string[];
-  duration: string;
-  href: string;
 };
 
 export const homeTracks: HomeTrack[] = [
   {
     title: "White Tara Chant",
     artist: "Phub Zam",
-    image: IMAGES.whiteTara,
-    alt: "Hands holding mala prayer beads above a brass singing bowl in butter-lamp light",
-    description:
-      "Refresh your mind, heart, and body with this spiritual chanting for health, healing, and longevity.",
-    tags: ["Chant", "Healing"],
-    duration: "21:08",
-    href: LINKS.youtube,
+    videoId: "vlw7s1Axke8",
+    description: "The viral chant for health, healing and longevity — 1.3M views.",
   },
   {
     title: "Medicine Buddha Chant",
     artist: "Kheng Sonam Dorji",
-    image: IMAGES.medicineBuddha,
-    alt: "A monk in maroon robes chanting beside golden statues",
-    description:
-      "A powerful meditation music piece composed for spiritual growth and inner tranquility.",
-    tags: ["Chant", "Meditation"],
-    duration: "17:45",
-    href: LINKS.youtube,
+    videoId: "dvKjqodPZEo",
+    description: "Meditation music for spiritual growth and inner tranquility — 431K views.",
   },
   {
-    title: "Drangyen Majay",
-    artist: "Traditional Folk",
-    image: IMAGES.drangyen,
-    alt: "A traditional Bhutanese drangyen lute leaning against a carved window",
-    description:
-      "The beautiful contrast of traditional Bhutanese folk music played on the drangyen lute.",
-    tags: ["Folk", "Dranyen"],
-    duration: "6:10",
-    href: LINKS.youtube,
+    title: "Yak Laby",
+    artist: "Kheng Sonam Dorji",
+    videoId: "s6HdtQtucO8",
+    description: "A legendary Bhutanese classic, performed with heart.",
   },
 ];
 
@@ -94,7 +75,7 @@ export const artists: Artist[] = [
     portrait: IMAGES.khengPortrait,
     portraitAlt: "Portrait of Kheng Sonam Dorji holding a dranyen lute on a wooden porch",
     bio: [
-      "Kheng Sonam Dorji is one of Bhutan's most beloved folk voices — a keeper of the songs that once travelled on foot between the valleys of eastern Bhutan. His recordings of Zhingkham Maed Lu and Zhung Lam Lam Khar have carried the Khengpa tradition to listeners far beyond the mountains that shaped it.",
+      "Kheng Sonam Dorji is one of Bhutan's most beloved folk voices — a keeper of the songs that once travelled on foot between the valleys of eastern Bhutan. His heartfelt cover of the legendary Yak Laby, and his recordings of Zhingkham Maed Lu and Zhung Lam Lam Khar, have carried the Khengpa tradition to listeners far beyond the mountains that shaped it.",
       "With a dranyen resting across his knee, he sings the way the old singers did: unhurried, weathered, and full of the fields, roads, and river crossings his songs describe. At YakVibes, his sessions are recorded as they were meant to be heard — close, warm, and without hurry.",
     ],
     facts: [
@@ -105,11 +86,11 @@ export const artists: Artist[] = [
     ],
     quote: "A song is a seed. Plant it in a young heart, and the valley will never forget its own name.",
     discography: [
+      { title: "Yak Laby", note: "A legendary Bhutanese classic · heartfelt YakVibes cover", duration: "4:40" },
+      { title: "Medicine Buddha Chant", note: "Meditation for spiritual growth & tranquility — 431K views", duration: "17:45" },
       { title: "Zhungkham Maed Lu", note: "The beloved field song of lower Kheng", duration: "4:52" },
       { title: "Zhung Lam Lam Khar", note: "A travelling song for the old road to the capital", duration: "5:37" },
-      { title: "Drangyen Majay", note: "Traditional lute piece · YakVibes arrangement", duration: "6:10" },
       { title: "Kheng Zhungdra Medley", note: "Slow classical songs of the Kheng valleys", duration: "8:24" },
-      { title: "Semki Tshiglu", note: "Verses of the heart · live YakVibes session", duration: "5:03" },
     ],
   },
   {
@@ -121,7 +102,7 @@ export const artists: Artist[] = [
     portrait: IMAGES.phubPortrait,
     portraitAlt: "Portrait of Phub Zam with mala beads, eyes softly closed in chant",
     bio: [
-      "Phub Zam's voice carries the liturgical melodies of Bhutan's monasteries into the quiet of everyday life. Her recordings of the White Tara and Medicine Buddha chants are among the most-listened-to pieces in the YakVibes library — long, unhurried sessions made for healing, longevity, and deep rest.",
+      "Phub Zam's voice carries the liturgical melodies of Bhutan's monasteries into the quiet of everyday life. Her recording of the White Tara chant — now past 1.3 million listens — is among the most-played pieces in the YakVibes library: a long, unhurried session made for healing, longevity, and deep rest.",
       "Trained in the slow, disciplined phrasing of sacred chant, she approaches each session as practice rather than performance. Listeners write to say her chants accompany their morning tea, their meditation cushion, or the last hour before sleep.",
     ],
     facts: [
@@ -132,9 +113,9 @@ export const artists: Artist[] = [
     ],
     quote: "When the chant begins, time slows down. That slowness is where healing lives.",
     discography: [
-      { title: "White Tara Chant", note: "Chanting for health, healing & longevity", duration: "21:08" },
-      { title: "Medicine Buddha Chant", note: "Composed for spiritual growth & tranquility", duration: "17:45" },
+      { title: "White Tara Chant", note: "The viral chant for health, healing & longevity — 1.3M views", duration: "21:08" },
       { title: "Chenrezig · Om Mani Padme Hum", note: "The mantra of compassion, sung slowly", duration: "12:30" },
+      { title: "Vajrasattva Purification Chant", note: "An evening practice, recorded in one take", duration: "14:20" },
       { title: "Green Tara Chant", note: "A session of swift, gentle protection", duration: "15:12" },
       { title: "Sangye Menla Healing Mantra", note: "Morning practice, recorded in one sitting", duration: "10:05" },
     ],

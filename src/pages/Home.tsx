@@ -9,7 +9,7 @@ import {
   ExternalIcon,
   FlameIcon,
   MountainIcon,
-  PlayIcon,
+  YoutubeIcon,
 } from "../components/icons";
 import { IMAGES, homeTracks } from "../data";
 
@@ -105,33 +105,23 @@ export default function Home({ onNavigate }: PageProps) {
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="font-display text-xs font-bold uppercase tracking-[0.4em] text-saffron">The Library</p>
             <h2 className="mt-4 text-[clamp(2rem,4vw,3rem)] font-bold">Sacred Sounds &amp; Traditional Melodies</h2>
-            <p className="mt-4 text-ink-soft">Curated selections for healing, meditation, and cultural connection.</p>
+            <p className="mt-4 text-ink-soft">Press play and listen right here — no need to leave the site.</p>
           </Reveal>
 
           <div className="mt-14 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
             {homeTracks.map((track, i) => (
               <Reveal key={track.title} delay={i * 130} className="h-full">
                 <article className="group flex h-full flex-col overflow-hidden rounded-lg bg-paper shadow-[0_4px_18px_rgba(45,42,38,0.07)] ring-1 ring-ink/5 transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_44px_rgba(127,29,29,0.16)]">
-                  <div className="relative h-52 overflow-hidden">
-                    <img
-                      src={track.image}
-                      alt={track.alt}
-                      className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.06]"
+                  {/* Responsive 16:9 YouTube embed */}
+                  <div className="relative aspect-video w-full overflow-hidden bg-burgundy">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${track.videoId}`}
+                      title={`${track.title} — ${track.artist}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full border-0"
                     />
-                    <span className="absolute bottom-3 right-3 rounded-md bg-ink/75 px-2 py-0.5 font-display text-xs font-semibold tracking-wider text-cream">
-                      {track.duration}
-                    </span>
-                    <a
-                      href={track.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`Watch ${track.title} on YouTube`}
-                      className="absolute inset-0 grid place-items-center bg-ink/0 transition duration-300 group-hover:bg-ink/30"
-                    >
-                      <span className="grid h-14 w-14 scale-75 place-items-center rounded-full bg-saffron text-white opacity-0 shadow-xl transition duration-300 group-hover:scale-100 group-hover:opacity-100">
-                        <PlayIcon className="ml-0.5 h-6 w-6" />
-                      </span>
-                    </a>
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <span className="font-display text-[0.78rem] font-bold uppercase tracking-[0.2em] text-saffron">
@@ -139,24 +129,10 @@ export default function Home({ onNavigate }: PageProps) {
                     </span>
                     <h3 className="mt-1.5 text-xl font-bold">{track.title}</h3>
                     <p className="mt-2.5 flex-1 text-[0.98rem] leading-relaxed text-ink-soft">{track.description}</p>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {track.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full border border-ink/10 bg-cream px-2.5 py-0.5 font-display text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-burgundy"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                    <div className="mt-5 flex items-center gap-2 border-t border-ink/10 pt-4 font-display text-[0.7rem] font-bold uppercase tracking-[0.18em] text-ink-soft">
+                      <YoutubeIcon className="h-4 w-4 text-saffron" />
+                      On the YakVibes channel
                     </div>
-                    <a
-                      href={track.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg border-2 border-burgundy px-4 py-2.5 font-display text-sm font-semibold text-burgundy transition duration-300 hover:bg-burgundy hover:text-cream"
-                    >
-                      Watch on YouTube <ExternalIcon className="h-4 w-4" />
-                    </a>
                   </div>
                 </article>
               </Reveal>
