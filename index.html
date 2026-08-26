@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data:; media-src 'self' https:; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://w.soundcloud.com https://soundcloud.com;"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://w.soundcloud.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https: data:; media-src 'self' https:; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://w.soundcloud.com https://soundcloud.com;"
     />
     <meta
       name="description"
@@ -27,6 +27,7 @@
   </head>
   <body>
     <div id="root"></div>
+    <script src="https://w.soundcloud.com/player/api.js"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
