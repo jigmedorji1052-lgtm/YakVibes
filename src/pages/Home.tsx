@@ -11,7 +11,7 @@ import {
   MountainIcon,
   YoutubeIcon,
 } from "../components/icons";
-import { IMAGES, homeTracks } from "../data";
+import { IMAGES, homeTracks, team } from "../data";
 
 type PageProps = {
   onNavigate: (page: Route, section?: string) => void;
@@ -129,10 +129,16 @@ export default function Home({ onNavigate }: PageProps) {
                     </span>
                     <h3 className="mt-1.5 text-xl font-bold">{track.title}</h3>
                     <p className="mt-2.5 flex-1 text-[0.98rem] leading-relaxed text-ink-soft">{track.description}</p>
-                    <div className="mt-5 flex items-center gap-2 border-t border-ink/10 pt-4 font-display text-[0.7rem] font-bold uppercase tracking-[0.18em] text-ink-soft">
+                    <a
+                      href={track.externalHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group/link mt-5 flex items-center gap-2 border-t border-ink/10 pt-4 font-display text-[0.7rem] font-bold uppercase tracking-[0.18em] text-ink-soft transition-colors duration-300 hover:text-saffron"
+                    >
                       <YoutubeIcon className="h-4 w-4 text-saffron" />
-                      On the YakVibes channel
-                    </div>
+                      On the YakVibes Channel
+                      <ExternalIcon className="ml-auto h-3.5 w-3.5 opacity-50 transition duration-300 group-hover/link:translate-x-0.5 group-hover/link:opacity-100" />
+                    </a>
                   </div>
                 </article>
               </Reveal>
@@ -147,6 +153,34 @@ export default function Home({ onNavigate }: PageProps) {
               Meet the Voices Behind the Chants <ArrowRightIcon className="h-4.5 w-4.5" />
             </button>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ---------- Team / Artist Bios ---------- */}
+      <section id="artists" className="relative scroll-mt-24 py-24 md:py-28">
+        <div className="mx-auto max-w-6xl px-5 md:px-8">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <p className="font-display text-xs font-bold uppercase tracking-[0.4em] text-saffron">The Artists</p>
+            <h2 className="mt-4 text-[clamp(2rem,4vw,3rem)] font-bold">The Voices Behind the Chants</h2>
+            <p className="mt-4 text-ink-soft">Meet the artists carrying Bhutan&rsquo;s musical heritage forward.</p>
+          </Reveal>
+
+          <div className="mt-14 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-8">
+            {team.map((member, i) => (
+              <Reveal key={member.initials} delay={i * 110} className="h-full">
+                <article className="group flex h-full flex-col rounded-lg bg-paper p-8 text-center shadow-[0_4px_6px_rgba(0,0,0,0.05)] ring-1 ring-ink/5 transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(127,29,29,0.14)]">
+                  <div className="mx-auto mb-4 grid h-24 w-24 place-items-center rounded-full border-4 border-gold bg-burgundy font-display text-[1.75rem] font-bold text-gold transition duration-500 group-hover:rotate-3 group-hover:scale-105">
+                    {member.initials}
+                  </div>
+                  <h3 className="text-xl font-bold">{member.name}</h3>
+                  <span className="mb-4 mt-1.5 block font-display text-[0.9rem] font-semibold uppercase tracking-[0.05em] text-saffron">
+                    {member.role}
+                  </span>
+                  <p className="flex-1 text-[0.95rem] leading-relaxed text-ink-soft">{member.bio}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

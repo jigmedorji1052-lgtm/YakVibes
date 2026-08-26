@@ -3,9 +3,8 @@ import { PauseIcon, PlayIcon, SkipForwardIcon } from "./icons";
 
 const tracks = [
   { title: "White Tara Chant", artist: "Phub Zam" },
-  { title: "Yak Laby", artist: "Kheng Sonam Dorji" },
-  { title: "Om Mani Padme Hum", artist: "Phub Zam" },
   { title: "Medicine Buddha Chant", artist: "Kheng Sonam Dorji" },
+  { title: "Drangyen Majay", artist: "Traditional Folk" },
 ];
 
 const BAR_HEIGHTS = [14, 20, 10, 17];

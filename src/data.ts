@@ -19,6 +19,7 @@ export type HomeTrack = {
   title: string;
   artist: string;
   videoId: string;
+  externalHref: string;
   description: string;
 };
 
@@ -27,19 +28,56 @@ export const homeTracks: HomeTrack[] = [
     title: "White Tara Chant",
     artist: "Phub Zam",
     videoId: "vlw7s1Axke8",
+    externalHref: "https://www.youtube.com/watch?v=vlw7s1Axke8",
     description: "The viral chant for health, healing and longevity — 1.3M views.",
   },
   {
     title: "Medicine Buddha Chant",
     artist: "Kheng Sonam Dorji",
-    videoId: "dvKjqodPZEo",
+    videoId: "2QlSvS0imdI",
+    externalHref: "https://www.youtube.com/watch?v=dvKjqodPZEo",
     description: "Meditation music for spiritual growth and inner tranquility — 431K views.",
   },
   {
-    title: "Yak Laby",
-    artist: "Kheng Sonam Dorji",
-    videoId: "s6HdtQtucO8",
-    description: "A legendary Bhutanese classic, performed with heart.",
+    title: "Drangyen Majay",
+    artist: "Traditional Folk",
+    videoId: "Ag4btboeXrY",
+    externalHref: "https://www.youtube.com/watch?v=Ag4btboeXrY",
+    description: "The beautiful contrast of traditional Bhutanese folk music played on the drangyen lute.",
+  },
+];
+
+export type TeamMember = {
+  initials: string;
+  name: string;
+  role: string;
+  bio: string;
+};
+
+export const team: TeamMember[] = [
+  {
+    initials: "KSD",
+    name: "Kheng Sonam Dorji",
+    role: "Legendary Vocalist & Composer",
+    bio: "Placeholder bio — a legendary voice of Bhutan whose songs and chants have touched hundreds of thousands of listeners worldwide.",
+  },
+  {
+    initials: "PZ",
+    name: "Phub Zam",
+    role: "Devotional Vocalist",
+    bio: "Placeholder bio — the serene voice behind the viral White Tara Chant, bringing prayers of healing and longevity to life.",
+  },
+  {
+    initials: "TWD",
+    name: "Tenzin Wangmo Dorji",
+    role: "Traditional Folk Singer",
+    bio: "Placeholder bio — a keeper of the Drukdra tradition, singing Bhutanese folk songs with grace and authenticity.",
+  },
+  {
+    initials: "JC",
+    name: "Jangchu Chodden",
+    role: "Mantra Chanter",
+    bio: "Placeholder bio — the peaceful, haunting voice behind the Vajra Guru Mantra recitations.",
   },
 ];
 
