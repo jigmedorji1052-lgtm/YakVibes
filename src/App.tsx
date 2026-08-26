@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Nav, { type Route } from "./components/Nav";
 import Footer from "./components/Footer";
-import ListeningPill from "./components/ListeningPill";
+import ListeningRoom from "./components/ListeningRoom";
 import Home from "./pages/Home";
 import Artists from "./pages/Artists";
 
@@ -64,7 +64,7 @@ export default function App() {
       <Nav route={route} onNavigate={navigate} />
       <main>{route === "home" ? <Home onNavigate={navigate} /> : <Artists onNavigate={navigate} />}</main>
       <Footer onNavigate={navigate} />
-      <ListeningPill />
+      <ListeningRoom />
     </div>
   );
 }

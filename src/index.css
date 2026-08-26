@@ -76,24 +76,6 @@
   }
 }
 
-.eq-bar {
-  transform-origin: bottom;
-  animation: eq 1.05s ease-in-out infinite;
-}
-@keyframes eq {
-  0%,
-  100% {
-    transform: scaleY(0.3);
-  }
-  50% {
-    transform: scaleY(1);
-  }
-}
-.eq-paused .eq-bar {
-  animation: none;
-  transform: scaleY(0.28);
-}
-
 .marquee-track {
   display: flex;
   align-items: center;
@@ -153,6 +135,48 @@
 
 /* ---------- Textures ---------- */
 
+/* ---------- Listening Room — floating SoundCloud player ---------- */
+:root {
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --color-surface: #ffffff;
+  --color-primary: #c2410c;
+  --font-heading: "Outfit", sans-serif;
+  --border-radius: 8px;
+}
+
+.listening-room {
+  position: fixed;
+  bottom: var(--space-md);
+  right: var(--space-md);
+  width: 360px;
+  max-width: calc(100vw - 2rem);
+  background: var(--color-surface);
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(45, 42, 38, 0.25);
+  padding: var(--space-sm);
+  z-index: 1000;
+}
+.listening-room-label {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+  display: block;
+}
+@media (max-width: 768px) {
+  .listening-room {
+    left: var(--space-sm);
+    right: var(--space-sm);
+    width: auto;
+    bottom: var(--space-sm);
+  }
+}
+
 .texture-dots-light {
   background-image: radial-gradient(rgba(253, 251, 247, 0.13) 1px, transparent 1px);
   background-size: 22px 22px;
@@ -165,7 +189,6 @@
 @media (prefers-reduced-motion: reduce) {
   .kenburns,
   .flag-sway,
-  .eq-bar,
   .marquee-track,
   .cue-dot,
   .float-soft {
