@@ -96,7 +96,7 @@ function ArtistProfile({ artist, flip = false }: { artist: Artist; flip?: boolea
                       <a
                         href={LINKS.youtube}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="group -mx-3 flex items-center gap-4 rounded-md px-3 py-3.5 transition duration-300 hover:bg-paper hover:shadow-sm"
                       >
                         <span className="w-7 shrink-0 font-display text-sm font-bold text-gold">
@@ -125,7 +125,7 @@ function ArtistProfile({ artist, flip = false }: { artist: Artist; flip?: boolea
               <a
                 href={LINKS.youtube}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center gap-2.5 rounded-lg bg-saffron px-6 py-3 font-display font-semibold text-white shadow-md shadow-saffron/25 transition duration-300 hover:-translate-y-0.5 hover:bg-saffron-deep"
               >
                 Listen on YouTube <ExternalIcon className="h-4 w-4" />

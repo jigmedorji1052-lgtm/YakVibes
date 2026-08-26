@@ -79,7 +79,7 @@ export default function Home({ onNavigate }: PageProps) {
               <a
                 href="https://www.youtube.com/@YakVibes_Bhutan"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 rounded-lg border-2 border-cream/80 px-8 py-3.5 font-display font-semibold text-cream transition duration-300 hover:-translate-y-0.5 hover:bg-cream hover:text-burgundy"
               >
                 Visit YouTube <ExternalIcon className="h-4 w-4" />
@@ -132,7 +132,7 @@ export default function Home({ onNavigate }: PageProps) {
                     <a
                       href={track.externalHref}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       className="group/link mt-5 flex items-center gap-2 border-t border-ink/10 pt-4 font-display text-[0.7rem] font-bold uppercase tracking-[0.18em] text-ink-soft transition-colors duration-300 hover:text-saffron"
                     >
                       <YoutubeIcon className="h-4 w-4 text-saffron" />

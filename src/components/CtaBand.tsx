@@ -26,7 +26,7 @@ export default function CtaBand({ title, body, label }: CtaBandProps) {
           <a
             href={LINKS.youtube}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="mt-9 inline-flex items-center gap-2.5 rounded-lg bg-gold px-7 py-3.5 font-display font-semibold text-ink shadow-lg transition duration-300 hover:-translate-y-0.5 hover:bg-[#b45309] hover:text-cream"
           >
             {label} <YoutubeIcon className="h-5 w-5" />

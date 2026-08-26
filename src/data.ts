@@ -1,7 +1,6 @@
 export const LINKS = {
   youtube: "https://www.youtube.com/@YakVibes_Bhutan",
   facebook: "https://www.facebook.com/YakVibe",
-  email: "mailto:contact@yakvibes.bt",
 };
 
 export const IMAGES = {

@@ -36,7 +36,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               <a
                 href={LINKS.facebook}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="YakVibes on Facebook"
                 className="grid h-10 w-10 place-items-center rounded-lg border border-cream/25 text-cream/85 transition duration-300 hover:-translate-y-0.5 hover:border-gold hover:bg-gold hover:text-burgundy"
               >
@@ -45,14 +45,18 @@ export default function Footer({ onNavigate }: FooterProps) {
               <a
                 href={LINKS.youtube}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="YakVibes on YouTube"
                 className="grid h-10 w-10 place-items-center rounded-lg border border-cream/25 text-cream/85 transition duration-300 hover:-translate-y-0.5 hover:border-gold hover:bg-gold hover:text-burgundy"
               >
                 <YoutubeIcon className="h-4.5 w-4.5" />
               </a>
               <a
-                href={LINKS.email}
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  alert("Please email us at: contact [at] yakvibes.bt");
+                }}
                 aria-label="Email YakVibes"
                 className="grid h-10 w-10 place-items-center rounded-lg border border-cream/25 text-cream/85 transition duration-300 hover:-translate-y-0.5 hover:border-gold hover:bg-gold hover:text-burgundy"
               >
@@ -86,18 +90,25 @@ export default function Footer({ onNavigate }: FooterProps) {
             <h4 className="font-display text-xs font-bold uppercase tracking-[0.28em] text-gold">Connect</h4>
             <ul className="mt-5 space-y-3">
               <li>
-                <a href={LINKS.facebook} target="_blank" rel="noreferrer" className="transition-colors hover:text-gold">
+                <a href={LINKS.facebook} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-gold">
                   Facebook
                 </a>
               </li>
               <li>
-                <a href={LINKS.youtube} target="_blank" rel="noreferrer" className="transition-colors hover:text-gold">
+                <a href={LINKS.youtube} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-gold">
                   YouTube
                 </a>
               </li>
               <li>
-                <a href={LINKS.email} className="transition-colors hover:text-gold">
-                  contact@yakvibes.bt
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    alert("Please email us at: contact [at] yakvibes.bt");
+                  }}
+                  className="transition-colors hover:text-gold"
+                >
+                  Email Us
                 </a>
               </li>
             </ul>
