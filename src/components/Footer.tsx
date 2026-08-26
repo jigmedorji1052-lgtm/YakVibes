@@ -17,7 +17,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         ༀ
       </span>
 
-      <div className="relative mx-auto max-w-6xl px-5 pb-8 pt-16 md:px-8 md:pt-20">
+      <div className="relative mx-auto max-w-6xl px-5 pb-24 pt-16 md:px-8 md:pb-8 md:pt-20">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
