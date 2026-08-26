@@ -1,1 +1,182 @@
 @import "tailwindcss";
+
+/* ==========================================================
+   YakVibes Bhutan — Design Tokens
+   Saffron (robes) · Burgundy (architecture) · Gold (light)
+   Outfit display · Lora body · Noto Serif Tibetan accents
+   ========================================================== */
+@theme {
+  --color-cream: #fdfbf7;
+  --color-paper: #ffffff;
+  --color-ink: #2d2a26;
+  --color-ink-soft: #5c5855;
+  --color-saffron: #c2410c;
+  --color-saffron-deep: #9a3412;
+  --color-burgundy: #7f1d1d;
+  --color-burgundy-deep: #571313;
+  --color-gold: #d97706;
+
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Lora", Georgia, serif;
+  --font-tibetan: "Noto Serif Tibetan", "Lora", serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream font-body text-ink antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-burgundy;
+    line-height: 1.15;
+  }
+
+  ::selection {
+    background: var(--color-gold);
+    color: var(--color-cream);
+  }
+}
+
+/* ---------- Signature motion ---------- */
+
+.kenburns {
+  animation: kenburns 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes kenburns {
+  from {
+    transform: scale(1.02) translateY(0);
+  }
+  to {
+    transform: scale(1.12) translateY(-1.6%);
+  }
+}
+
+.flag-sway {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+  animation: sway 4.6s ease-in-out infinite;
+}
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-4.5deg);
+  }
+  50% {
+    transform: rotate(4.5deg);
+  }
+}
+
+.eq-bar {
+  transform-origin: bottom;
+  animation: eq 1.05s ease-in-out infinite;
+}
+@keyframes eq {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+.eq-paused .eq-bar {
+  animation: none;
+  transform: scaleY(0.28);
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marquee 44s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.cue-dot {
+  animation: cue 1.9s cubic-bezier(0.4, 0, 0.4, 1) infinite;
+}
+@keyframes cue {
+  0% {
+    transform: translateY(-120%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(320%);
+    opacity: 0;
+  }
+}
+
+.float-soft {
+  animation: floatSoft 7s ease-in-out infinite;
+}
+@keyframes floatSoft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ---------- Textures ---------- */
+
+.texture-dots-light {
+  background-image: radial-gradient(rgba(253, 251, 247, 0.13) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.texture-dots-dark {
+  background-image: radial-gradient(rgba(45, 42, 38, 0.055) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kenburns,
+  .flag-sway,
+  .eq-bar,
+  .marquee-track,
+  .cue-dot,
+  .float-soft {
+    animation: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
