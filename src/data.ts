@@ -5,13 +5,11 @@ export const LINKS = {
   instagramSobit: "https://www.instagram.com/sobit_sobi/",
 };
 
-/* All images are self-hosted from /public/images — no third-party hotlinking.
-   Run `node scripts/localize-images.mjs` once to populate the folder. */
 export const IMAGES = {
-  logo: "/images/logo.png",
-  hero: "/images/hero-home.jpg",
-  artistsHero: "/images/hero-artists.jpg",
-  cham: "/images/mission-cultural-bridge.jpg",
+  logo: "https://i.imgur.com/bgJgxKq.png",
+  hero: "https://i.imgur.com/QaXPHZm.png",
+  artistsHero: "https://i.imgur.com/5TYWAUS.png",
+  cham: "https://i.imgur.com/zbo0aP0.jpeg?v=2",
 };
 
 export type HomeTrack = {
@@ -59,7 +57,7 @@ export const team: TeamMember[] = [
     name: "Pinaka Chakraborty",
     role: "Percussion & Rhythm",
     bio: "A Grade tabla artist with All India Radio and a national scholar, Pinaka has performed as a cultural ambassador from Kolkata to Russia. With YakVibes he lays the pulse on drums, chabdrung and shakers.",
-    image: "/images/pinaka-chakraborty.jpg",
+    image: "https://i.imgur.com/fNhZcPy.jpeg",
     imageAlt: "Portrait of Pinaka Chakraborty in traditional Bhutanese gho",
   },
   {
