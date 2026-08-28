@@ -47,36 +47,41 @@ export const homeTracks: HomeTrack[] = [
 ];
 
 export type TeamMember = {
-  initials: string;
   name: string;
   role: string;
   bio: string;
+  image: string;
+  imageAlt: string;
 };
 
 export const team: TeamMember[] = [
   {
-    initials: "KSD",
+    name: "Pinaka Chakraborty",
+    role: "Percussion & Rhythm",
+    bio: "The heartbeat of YakVibes. Pinaka's drumming grounds the collective's chants and melodies, laying the steady, meditative pulse that carries every recording — keeping folk grooves and sacred chants rooted and alive.",
+    image: "/images/pinaka-chakraborty.jpg",
+    imageAlt: "Portrait of Pinaka Chakraborty in traditional Bhutanese gho",
+  },
+  {
+    name: "Ganga Ram",
+    role: "Drangyen & Strings",
+    bio: "Ganga Ram carries the valley songs forward on the drangyen. His strings weave the old folk melodies into the YakVibes sound, giving every performance its unmistakably Bhutanese voice.",
+    image: "/images/ganga-ram.jpg",
+    imageAlt: "Portrait of Ganga Ram in traditional Bhutanese gho",
+  },
+  {
     name: "Kheng Sonam Dorji",
-    role: "Legendary Vocalist & Composer",
-    bio: "A cornerstone of Bhutanese music, Kheng Sonam Dorji's deep, resonant voice and masterful compositions have touched millions. He bridges ancient folk traditions with modern melodies, creating soundscapes that resonate with the soul.",
+    role: "Drangyen Master & Vocalist",
+    bio: "A living treasure of Bhutanese music, Kheng Sonam Dorji has carried the Kingdom's sound to the world stage, including a performance at the Smithsonian Folklife Festival. He founded the Music of Bhutan Research Centre to document and preserve traditional music, and his work as archivist, educator and composer keeps the old songs alive for the generation after next.",
+    image: "/images/kheng-sonam-dorji.jpg",
+    imageAlt: "Portrait of Kheng Sonam Dorji in traditional Bhutanese gho",
   },
   {
-    initials: "PZ",
-    name: "Phub Zam",
-    role: "Devotional Vocalist",
-    bio: "Known for her incredibly soothing tone, Phub Zam brought the White Tara Chant to over a million listeners worldwide. Her voice is a vessel for compassion, designed to bring healing and longevity to those who listen.",
-  },
-  {
-    initials: "TWD",
-    name: "Tenzin Wangmo Dorji",
-    role: "Traditional Folk Singer",
-    bio: "A master of the traditional Drukdra genre, Tenzin Wangmo Dorji sings the old folk songs of Bhutan with grace and authenticity, ensuring these ancient stories are never forgotten.",
-  },
-  {
-    initials: "JC",
-    name: "Jangchu Chodden",
-    role: "Mantra Chanter",
-    bio: "With a peaceful and haunting delivery, Jangchu Chodden's recitations of the Vajra Guru Mantra offer listeners a profound sense of protection and spiritual clarity.",
+    name: "Sobit Singh",
+    role: "Bass & Groove",
+    bio: "Sobit brings the low end that bridges tradition and today. His bass gives YakVibes' folk and devotional music a modern heartbeat, making ancient melodies resonate with new listeners around the world.",
+    image: "/images/sobit-singh.jpg",
+    imageAlt: "Portrait of Sobit Singh in traditional Bhutanese gho",
   },
 ];
 
