@@ -11,7 +11,7 @@ import {
   MountainIcon,
   YoutubeIcon,
 } from "../components/icons";
-import { IMAGES, homeTracks, team } from "../data";
+import { IMAGES, LINKS, homeTracks, team } from "../data";
 
 type PageProps = {
   onNavigate: (page: Route, section?: string) => void;
@@ -20,8 +20,8 @@ type PageProps = {
 const pillars = [
   {
     icon: FlameIcon,
-    title: "Chants with Purpose",
-    text: "Healing and longevity chants recorded slowly, the way they are meant to be received — one breath at a time.",
+    title: "Mantras with Purpose",
+    text: "Healing and longevity mantras recorded slowly, the way they are meant to be received — one breath at a time.",
   },
   {
     icon: DranyenIcon,
@@ -65,7 +65,7 @@ export default function Home({ onNavigate }: PageProps) {
               Echoes of the <em className="font-body font-medium italic text-gold">Himalayas.</em>
             </h1>
             <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-cream/85">
-              Journey into the heart of Bhutan. Discover ancient Buddhist chants, traditional Drangyen
+              Journey into the heart of Bhutan. Discover ancient Buddhist mantras, traditional Drangyen
               melodies, and mindful music crafted for healing, meditation, and inner peace.
             </p>
             <div className="mt-11 flex flex-wrap items-center justify-center gap-4">
@@ -142,6 +142,35 @@ export default function Home({ onNavigate }: PageProps) {
                 </article>
               </Reveal>
             ))}
+
+            {/* Library call-out card — keeps the three-card grid balanced */}
+            <Reveal delay={2 * 130} className="h-full">
+              <article className="group flex h-full flex-col overflow-hidden rounded-lg bg-burgundy text-cream shadow-[0_4px_18px_rgba(45,42,38,0.07)] ring-1 ring-ink/5 transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_44px_rgba(127,29,29,0.28)]">
+                <div className="texture-dots-light relative grid aspect-video w-full place-items-center overflow-hidden bg-burgundy-deep">
+                  <span
+                    className="select-none font-tibetan text-7xl leading-none text-gold/85 transition duration-700 ease-out group-hover:scale-110"
+                    aria-hidden="true"
+                  >
+                    ༀ
+                  </span>
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="mt-1.5 text-xl font-bold text-cream">Explore the Full Library</h3>
+                  <p className="mt-2.5 flex-1 text-base leading-relaxed text-cream/80">
+                    More sacred music and folk songs from the valleys of Bhutan, on our channel.
+                  </p>
+                  <a
+                    href={LINKS.youtube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-4 py-2.5 font-display text-sm font-semibold text-ink transition duration-300 hover:-translate-y-0.5 hover:bg-[#b45309] hover:text-cream"
+                  >
+                    <YoutubeIcon className="h-4 w-4" />
+                    Subscribe on YouTube
+                  </a>
+                </div>
+              </article>
+            </Reveal>
           </div>
 
           <Reveal className="mt-12 text-center" delay={120}>
@@ -149,7 +178,7 @@ export default function Home({ onNavigate }: PageProps) {
               onClick={() => onNavigate("artists")}
               className="inline-flex items-center gap-2.5 font-display text-base font-bold text-burgundy underline decoration-gold decoration-2 underline-offset-8 transition duration-300 hover:text-saffron"
             >
-              Meet the Voices Behind the Chants <ArrowRightIcon className="h-4.5 w-4.5" />
+              Meet the Voices Behind the Music <ArrowRightIcon className="h-4.5 w-4.5" />
             </button>
           </Reveal>
         </div>
@@ -160,7 +189,7 @@ export default function Home({ onNavigate }: PageProps) {
         <div className="mx-auto max-w-6xl px-5 md:px-8">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="font-display text-xs font-bold uppercase tracking-[0.4em] text-saffron">The Artists</p>
-            <h2 className="mt-4 text-[clamp(2rem,4vw,3rem)] font-bold">The Voices Behind the Chants</h2>
+            <h2 className="mt-4 text-[clamp(2rem,4vw,3rem)] font-bold">The Voices Behind the Music</h2>
             <p className="mt-4 text-ink-soft">Meet the artists carrying Bhutan&rsquo;s musical heritage forward.</p>
           </Reveal>
 
@@ -205,8 +234,8 @@ export default function Home({ onNavigate }: PageProps) {
               Himalayas, we are dedicated to preserving the sacred musical heritage of Bhutan.
             </p>
             <p className="mt-4 text-ink-soft">
-              From the legendary compositions of Kheng Sonam Dorji to the soothing devotional chants of Phub
-              Zam, our mission is to carry the peaceful energy and ancient wisdom of Bhutan to listeners
+              From the legendary compositions of Kheng Sonam Dorji to the living folk traditions of the
+              valleys, our mission is to carry the peaceful energy and ancient wisdom of Bhutan to listeners
               around the world.
             </p>
 
@@ -246,7 +275,7 @@ export default function Home({ onNavigate }: PageProps) {
                   Est. in the Himalayas
                 </p>
                 <p className="mt-1.5 font-body text-sm italic leading-relaxed text-cream/85">
-                  Where every note is intentional, and every chant carries a purpose.
+                  Where every note is intentional, and every mantra carries a purpose.
                 </p>
               </div>
             </div>
@@ -256,7 +285,7 @@ export default function Home({ onNavigate }: PageProps) {
 
       <CtaBand
         title="Bring Tranquility to Your Daily Life"
-        body="Subscribe to our YouTube channel and newsletter to receive new chants, folk songs, and cultural stories directly to your inbox."
+        body="Subscribe to our YouTube channel and newsletter to receive new mantras, folk songs, and cultural stories directly to your inbox."
         label="Subscribe on YouTube"
       />
     </>

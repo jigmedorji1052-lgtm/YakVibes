@@ -22,18 +22,11 @@ export type HomeTrack = {
 
 export const homeTracks: HomeTrack[] = [
   {
-    title: "White Tara Chant",
-    artist: "Phub Zam",
-    videoId: "vlw7s1Axke8",
-    externalHref: "https://www.youtube.com/watch?v=vlw7s1Axke8",
-    description: "The viral chant for health, healing and longevity — 1.3M views.",
-  },
-  {
     title: "Medicine Buddha Chant",
     artist: "Kheng Sonam Dorji",
     videoId: "2QlSvS0imdI",
     externalHref: "https://www.youtube.com/watch?v=dvKjqodPZEo",
-    description: "Meditation music for spiritual growth and inner tranquility — 431K views.",
+    description: "A devotional mantra for spiritual growth and inner tranquility.",
   },
   {
     title: "Drangyen Majay",
@@ -141,13 +134,13 @@ export const artists: Artist[] = [
     id: "pinaka-chakraborty",
     index: "02",
     name: "Pinaka Chakraborty",
-    tagline: "An A Grade tabla artist who gives every chant its heartbeat.",
+    tagline: "An A Grade tabla artist who gives every mantra its heartbeat.",
     eyebrow: "02 · Percussion — Kolkata to the Himalayas",
     portrait: "https://i.imgur.com/fNhZcPy.jpeg",
     portraitAlt: "Portrait of Pinaka Chakraborty, tabla and percussion artist",
     bio: [
       "An A Grade artist with All India Radio and a national scholar, Pinaka Chakraborty has carried Indian rhythm from Kolkata to stages in Russia as a cultural ambassador. Trained in the classical tradition, he brings discipline and warmth to everything he touches.",
-      "With YakVibes he trades the concert hall for the valley, laying the pulse on drums, chabdrung and shakers. His percussion is the steady ground beneath the chants — the breath that keeps the music alive.",
+      "With YakVibes he trades the concert hall for the valley, laying the pulse on drums, chabdrung and shakers. His percussion is the steady ground beneath the mantras — the breath that keeps the music alive.",
     ],
     facts: [
       { label: "Training", value: "A Grade, All India Radio" },
@@ -161,7 +154,7 @@ export const artists: Artist[] = [
       { title: "A Grade Artist — All India Radio", note: "Classical tabla, nationally recognised", duration: "" },
       { title: "National Scholar", note: "A lifetime of rhythm research & tradition", duration: "" },
       { title: "Cultural Ambassador", note: "Carrying Indian rhythm from Kolkata to Russia", duration: "" },
-      { title: "YakVibes: Sacred Sounds", note: "Percussion across the chant & folk sessions", duration: "" },
+      { title: "YakVibes: Sacred Sounds", note: "Percussion across the mantra & folk sessions", duration: "" },
     ],
   },
   {
@@ -188,7 +181,7 @@ export const artists: Artist[] = [
       { title: "Auroo, Guitar & Metobobchu", note: "The instruments of the Himalayan voice", duration: "" },
       { title: "Jodhpur RIFF Festival", note: "Valley songs performed above the Blue City", duration: "" },
       { title: "Himalayan Folk Melodies", note: "Old ways woven into the YakVibes sound", duration: "" },
-      { title: "YakVibes: Sacred Sounds", note: "Strings across the chant & folk sessions", duration: "" },
+      { title: "YakVibes: Sacred Sounds", note: "Strings across the mantra & folk sessions", duration: "" },
     ],
   },
   {

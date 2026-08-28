@@ -11,7 +11,7 @@ type PageProps = {
 
 const stats: Array<[string, string]> = [
   ["4", "voices, one mission"],
-  ["30+", "chants & folk songs recorded"],
+  ["30+", "mantras & folk songs recorded"],
   ["1", "shared mission — preservation"],
 ];
 
@@ -250,7 +250,7 @@ export default function Artists({ onNavigate }: PageProps) {
 
       <CtaBand
         title="Hear Them Play"
-        body="Every week, a new chant, folk song, or cultural story lands on the YakVibes channel. Pull up a cushion, press play, and listen."
+        body="Every week, new mantras, folk songs, and cultural stories land on the YakVibes channel. Pull up a cushion, press play, and listen."
         label="Subscribe on YouTube"
       />
     </>
