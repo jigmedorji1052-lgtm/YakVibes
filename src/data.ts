@@ -97,13 +97,15 @@ export type Artist = {
   id: string;
   index: string;
   name: string;
-  role: string;
+  tagline: string;
   eyebrow: string;
   portrait: string;
   portraitAlt: string;
   bio: string[];
   facts: ArtistFact[];
-  quote: string;
+  quote?: string;
+  listLabel: string;
+  listNote: string;
   discography: DiscographyTrack[];
 };
 
@@ -112,54 +114,110 @@ export const artists: Artist[] = [
     id: "kheng-sonam-dorji",
     index: "01",
     name: "Kheng Sonam Dorji",
-    role: "Folk master of the dranyen, carrying the songs of eastern Bhutan",
+    tagline: "Folk master of the drangyen, carrying the songs of eastern Bhutan.",
     eyebrow: "01 · Folk Master — Kheng Region",
-    portrait: IMAGES.khengPortrait,
-    portraitAlt: "Portrait of Kheng Sonam Dorji holding a dranyen lute on a wooden porch",
+    portrait: "https://i.imgur.com/ilT0KMA.jpeg",
+    portraitAlt: "Portrait of Kheng Sonam Dorji holding a drangyen lute on a wooden porch",
     bio: [
       "Kheng Sonam Dorji is one of Bhutan's most beloved folk voices — a keeper of the songs that once travelled on foot between the valleys of eastern Bhutan. His heartfelt cover of the legendary Yak Laby, and his recordings of Zhingkham Maed Lu and Zhung Lam Lam Khar, have carried the Khengpa tradition to listeners far beyond the mountains that shaped it.",
-      "With a dranyen resting across his knee, he sings the way the old singers did: unhurried, weathered, and full of the fields, roads, and river crossings his songs describe. At YakVibes, his sessions are recorded as they were meant to be heard — close, warm, and without hurry.",
+      "With a drangyen resting across his knee, he sings the way the old singers did: unhurried, weathered, and full of the fields, roads and river crossings his songs describe. At YakVibes, his sessions are recorded as they were meant to be heard — close, warm, and without hurry.",
     ],
     facts: [
       { label: "Origin", value: "Kheng, Eastern Bhutan" },
-      { label: "Instrument", value: "Dranyen lute" },
-      { label: "Known for", value: "Zhungkham Maed Lu" },
-      { label: "Style", value: "Khengpa folk song" },
+      { label: "Instrument", value: "Drangyen lute" },
+      { label: "Known for", value: "Yak Laby cover" },
+      { label: "Legacy", value: "Music of Bhutan Research Centre" },
     ],
     quote: "A song is a seed. Plant it in a young heart, and the valley will never forget its own name.",
+    listLabel: "Selected Recordings",
+    listNote: "Full library on YouTube",
     discography: [
       { title: "Yak Laby", note: "A legendary Bhutanese classic · heartfelt YakVibes cover", duration: "4:40" },
-      { title: "Medicine Buddha Chant", note: "Meditation for spiritual growth & tranquility — 431K views", duration: "17:45" },
       { title: "Zhungkham Maed Lu", note: "The beloved field song of lower Kheng", duration: "4:52" },
       { title: "Zhung Lam Lam Khar", note: "A travelling song for the old road to the capital", duration: "5:37" },
       { title: "Kheng Zhungdra Medley", note: "Slow classical songs of the Kheng valleys", duration: "8:24" },
+      { title: "Semki Tshiglu", note: "Verses of the heart · live YakVibes session", duration: "5:03" },
     ],
   },
   {
-    id: "phub-zam",
+    id: "pinaka-chakraborty",
     index: "02",
-    name: "Phub Zam",
-    role: "Sacred chant vocalist, keeper of melodies for healing and longevity",
-    eyebrow: "02 · Sacred Chant — Central Bhutan",
-    portrait: IMAGES.phubPortrait,
-    portraitAlt: "Portrait of Phub Zam with mala beads, eyes softly closed in chant",
+    name: "Pinaka Chakraborty",
+    tagline: "An A Grade tabla artist who gives every chant its heartbeat.",
+    eyebrow: "02 · Percussion — Kolkata to the Himalayas",
+    portrait: "https://i.imgur.com/fNhZcPy.jpeg",
+    portraitAlt: "Portrait of Pinaka Chakraborty, tabla and percussion artist",
     bio: [
-      "Phub Zam's voice carries the liturgical melodies of Bhutan's monasteries into the quiet of everyday life. Her recording of the White Tara chant — now past 1.3 million listens — is among the most-played pieces in the YakVibes library: a long, unhurried session made for healing, longevity, and deep rest.",
-      "Trained in the slow, disciplined phrasing of sacred chant, she approaches each session as practice rather than performance. Listeners write to say her chants accompany their morning tea, their meditation cushion, or the last hour before sleep.",
+      "An A Grade artist with All India Radio and a national scholar, Pinaka Chakraborty has carried Indian rhythm from Kolkata to stages in Russia as a cultural ambassador. Trained in the classical tradition, he brings discipline and warmth to everything he touches.",
+      "With YakVibes he trades the concert hall for the valley, laying the pulse on drums, chabdrung and shakers. His percussion is the steady ground beneath the chants — the breath that keeps the music alive.",
     ],
     facts: [
-      { label: "Voice", value: "Sacred chant" },
-      { label: "Practice", value: "Healing & longevity mantras" },
-      { label: "Roots", value: "Central Bhutan" },
-      { label: "Sessions", value: "Recorded live, one take" },
+      { label: "Training", value: "A Grade, All India Radio" },
+      { label: "Roots", value: "Kolkata, India" },
+      { label: "Kit", value: "Drums, chabdrung & shakers" },
+      { label: "Stage", value: "Cultural ambassador, Russia" },
     ],
-    quote: "When the chant begins, time slows down. That slowness is where healing lives.",
+    listLabel: "Highlights",
+    listNote: "More on the YakVibes channel",
     discography: [
-      { title: "White Tara Chant", note: "The viral chant for health, healing & longevity — 1.3M views", duration: "21:08" },
-      { title: "Chenrezig · Om Mani Padme Hum", note: "The mantra of compassion, sung slowly", duration: "12:30" },
-      { title: "Vajrasattva Purification Chant", note: "An evening practice, recorded in one take", duration: "14:20" },
-      { title: "Green Tara Chant", note: "A session of swift, gentle protection", duration: "15:12" },
-      { title: "Sangye Menla Healing Mantra", note: "Morning practice, recorded in one sitting", duration: "10:05" },
+      { title: "A Grade Artist — All India Radio", note: "Classical tabla, nationally recognised", duration: "" },
+      { title: "National Scholar", note: "A lifetime of rhythm research & tradition", duration: "" },
+      { title: "Cultural Ambassador", note: "Carrying Indian rhythm from Kolkata to Russia", duration: "" },
+      { title: "YakVibes: Sacred Sounds", note: "Percussion across the chant & folk sessions", duration: "" },
+    ],
+  },
+  {
+    id: "ganga-ram",
+    index: "03",
+    name: "Ganga Ram",
+    tagline: "Strings that carry the folk melodies of the Himalayas.",
+    eyebrow: "03 · Strings — The Sound of the Valleys",
+    portrait: "https://i.imgur.com/sEdYbnZ.jpeg",
+    portraitAlt: "Portrait of Ganga Ram with his stringed instruments",
+    bio: [
+      "Ganga Ram Bhandari moves between the auroo, guitar and metobobchu, drawing out the folk melodies that define the Himalayan sound. His playing links the old ways with the new, giving every YakVibes performance its unmistakably Bhutanese voice.",
+      "He has carried that sound to audiences perched above the city at the Jodhpur RIFF festival and to listeners around the world. For Ganga Ram, every string is a thread connecting the valleys of the past to the ears of today.",
+    ],
+    facts: [
+      { label: "Instruments", value: "Auroo, guitar & metobobchu" },
+      { label: "Stage", value: "Jodhpur RIFF festival" },
+      { label: "Craft", value: "Himalayan folk melodies" },
+      { label: "Role", value: "Strings & folk melodies" },
+    ],
+    listLabel: "Highlights",
+    listNote: "More on the YakVibes channel",
+    discography: [
+      { title: "Auroo, Guitar & Metobobchu", note: "The instruments of the Himalayan voice", duration: "" },
+      { title: "Jodhpur RIFF Festival", note: "Valley songs performed above the Blue City", duration: "" },
+      { title: "Himalayan Folk Melodies", note: "Old ways woven into the YakVibes sound", duration: "" },
+      { title: "YakVibes: Sacred Sounds", note: "Strings across the chant & folk sessions", duration: "" },
+    ],
+  },
+  {
+    id: "sobit-singh",
+    index: "04",
+    name: "Sobit Singh",
+    tagline: "The voice and low end that bridges two worlds.",
+    eyebrow: "04 · Groove & Voice — Tradition Meets Today",
+    portrait: "https://i.imgur.com/SIugnAG.jpeg",
+    portraitAlt: "Portrait of Sobit Singh, singer and bassist",
+    bio: [
+      "A singer and songwriter followed by more than half a million fans, Sobit Singh — known as Sasang — moves effortlessly between the lubang, bass guitar, keyboard and aungli. His gift is making ancient melodies feel immediate.",
+      "At YakVibes he is the bridge between tradition and today, giving folk and devotional music a modern heartbeat without losing its soul. Through him, the songs of Bhutan reach a whole new generation of listeners.",
+    ],
+    facts: [
+      { label: "Alias", value: "“Sasang”" },
+      { label: "Following", value: "500,000+ fans" },
+      { label: "Instruments", value: "Lubang, bass, keys & aungli" },
+      { label: "Role", value: "Bridge of tradition & today" },
+    ],
+    listLabel: "Highlights",
+    listNote: "More on the YakVibes channel",
+    discography: [
+      { title: "“Sasang” — Singer & Songwriter", note: "Followed by more than half a million fans", duration: "" },
+      { title: "Lubang, Bass, Keys & Aungli", note: "The low end that bridges two worlds", duration: "" },
+      { title: "Tradition Meets Today", note: "A modern heartbeat for ancient melodies", duration: "" },
+      { title: "YakVibes: Sacred Sounds", note: "Groove & voice across the sessions", duration: "" },
     ],
   },
 ];
