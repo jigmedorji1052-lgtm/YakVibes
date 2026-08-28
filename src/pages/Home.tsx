@@ -62,19 +62,18 @@ export default function Home({ onNavigate }: PageProps) {
               <span className="h-px w-10 bg-gold/70" aria-hidden="true" />
             </div>
             <h1 className="mt-7 text-[clamp(2.4rem,5.5vw,4.2rem)] font-extrabold leading-[1.08] text-cream">
-              Preserving Bhutan&rsquo;s{" "}
-              <em className="font-body font-medium italic text-gold">Spiritual Heritage</em> Through Music
+              Echoes of the <em className="font-body font-medium italic text-gold">Himalayas.</em>
             </h1>
             <p className="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-cream/85">
-              Experience the tranquility of traditional chants, folk melodies, and mindful music from the
-              heart of the Himalayas.
+              Journey into the heart of Bhutan. Discover ancient Buddhist chants, traditional Drangyen
+              melodies, and mindful music crafted for healing, meditation, and inner peace.
             </p>
             <div className="mt-11 flex flex-wrap items-center justify-center gap-4">
               <button
                 onClick={() => onNavigate("home", "music")}
                 className="inline-flex items-center gap-2.5 rounded-lg bg-saffron px-8 py-3.5 font-display font-semibold text-white shadow-lg shadow-saffron/30 transition duration-300 hover:-translate-y-0.5 hover:bg-saffron-deep"
               >
-                Explore the Music <ArrowRightIcon className="h-4.5 w-4.5" />
+                Enter the Listening Room <ArrowRightIcon className="h-4.5 w-4.5" />
               </button>
               <a
                 href="https://www.youtube.com/@YakVibes_Bhutan"
@@ -191,13 +190,13 @@ export default function Home({ onNavigate }: PageProps) {
             <p className="font-display text-xs font-bold uppercase tracking-[0.4em] text-saffron">Our Mission</p>
             <h2 className="mt-4 text-[clamp(2rem,4vw,3rem)] font-bold">More Than Music. A Cultural Bridge.</h2>
             <p className="mt-6 text-ink-soft">
-              YakVibes Bhutan is dedicated to preserving the rich musical heritage of the Himalayas. From the
-              legendary compositions of Kheng Sonam Dorji to the soothing chants of White Tara, we bridge
-              ancient wisdom with modern accessibility.
+              YakVibes is more than a musical collective; it is a cultural bridge. Founded in the high
+              Himalayas, we are dedicated to preserving the sacred musical heritage of Bhutan.
             </p>
             <p className="mt-4 text-ink-soft">
-              Every note is intentional. Every chant carries a purpose — whether for healing, meditation, or
-              simply connecting with the peaceful energy of Bhutan.
+              From the legendary compositions of Kheng Sonam Dorji to the soothing devotional chants of Phub
+              Zam, our mission is to carry the peaceful energy and ancient wisdom of Bhutan to listeners
+              around the world.
             </p>
 
             <div className="mt-9 space-y-6">

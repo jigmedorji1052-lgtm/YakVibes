@@ -58,25 +58,25 @@ export const team: TeamMember[] = [
     initials: "KSD",
     name: "Kheng Sonam Dorji",
     role: "Legendary Vocalist & Composer",
-    bio: "Placeholder bio — a legendary voice of Bhutan whose songs and chants have touched hundreds of thousands of listeners worldwide.",
+    bio: "A cornerstone of Bhutanese music, Kheng Sonam Dorji's deep, resonant voice and masterful compositions have touched millions. He bridges ancient folk traditions with modern melodies, creating soundscapes that resonate with the soul.",
   },
   {
     initials: "PZ",
     name: "Phub Zam",
     role: "Devotional Vocalist",
-    bio: "Placeholder bio — the serene voice behind the viral White Tara Chant, bringing prayers of healing and longevity to life.",
+    bio: "Known for her incredibly soothing tone, Phub Zam brought the White Tara Chant to over a million listeners worldwide. Her voice is a vessel for compassion, designed to bring healing and longevity to those who listen.",
   },
   {
     initials: "TWD",
     name: "Tenzin Wangmo Dorji",
     role: "Traditional Folk Singer",
-    bio: "Placeholder bio — a keeper of the Drukdra tradition, singing Bhutanese folk songs with grace and authenticity.",
+    bio: "A master of the traditional Drukdra genre, Tenzin Wangmo Dorji sings the old folk songs of Bhutan with grace and authenticity, ensuring these ancient stories are never forgotten.",
   },
   {
     initials: "JC",
     name: "Jangchu Chodden",
     role: "Mantra Chanter",
-    bio: "Placeholder bio — the peaceful, haunting voice behind the Vajra Guru Mantra recitations.",
+    bio: "With a peaceful and haunting delivery, Jangchu Chodden's recitations of the Vajra Guru Mantra offer listeners a profound sense of protection and spiritual clarity.",
   },
 ];
 
