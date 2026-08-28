@@ -2,7 +2,7 @@ import type { Route } from "../components/Nav";
 import CtaBand from "../components/CtaBand";
 import Mantra from "../components/Mantra";
 import Reveal from "../components/Reveal";
-import { ArrowRightIcon, ExternalIcon, PlayIcon } from "../components/icons";
+import { ArrowRightIcon, ExternalIcon } from "../components/icons";
 import { IMAGES, LINKS, artists, type Artist } from "../data";
 
 type PageProps = {
@@ -89,35 +89,30 @@ function ArtistProfile({ artist, flip = false }: { artist: Artist; flip?: boolea
                   <h3 className="font-display text-sm font-bold uppercase tracking-[0.26em] text-burgundy">
                     {artist.listLabel}
                   </h3>
-                  <span className="font-display text-xs font-semibold text-ink-soft">{artist.listNote} ↗</span>
+                  <a
+                    href={LINKS.youtube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-display text-xs font-semibold text-ink-soft transition-colors duration-300 hover:text-saffron"
+                  >
+                    {artist.listNote} ↗
+                  </a>
                 </div>
                 <ul className="divide-y divide-ink/10">
                   {artist.discography.map((item, i) => (
-                    <li key={item.title}>
-                      <a
-                        href={LINKS.youtube}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group -mx-3 flex items-center gap-4 rounded-md px-3 py-3.5 transition duration-300 hover:bg-paper hover:shadow-sm"
-                      >
-                        <span className="w-7 shrink-0 font-display text-sm font-bold text-gold">
-                          {String(i + 1).padStart(2, "0")}
+                    <li key={item.title} className="flex items-center gap-4 py-3.5">
+                      <span className="w-7 shrink-0 font-display text-sm font-bold text-gold">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate font-display font-semibold text-ink">{item.title}</span>
+                        <span className="block truncate font-body text-sm italic text-ink-soft">{item.note}</span>
+                      </span>
+                      {item.duration && (
+                        <span className="hidden shrink-0 font-display text-xs font-semibold tracking-[0.15em] text-ink-soft sm:block">
+                          {item.duration}
                         </span>
-                        <span className="min-w-0 flex-1">
-                          <span className="block truncate font-display font-semibold text-ink transition-colors duration-300 group-hover:text-saffron">
-                            {item.title}
-                          </span>
-                          <span className="block truncate font-body text-sm italic text-ink-soft">{item.note}</span>
-                        </span>
-                        {item.duration && (
-                          <span className="hidden shrink-0 font-display text-xs font-semibold tracking-[0.15em] text-ink-soft sm:block">
-                            {item.duration}
-                          </span>
-                        )}
-                        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-burgundy/10 text-burgundy opacity-70 transition duration-300 group-hover:bg-saffron group-hover:text-cream group-hover:opacity-100">
-                          <PlayIcon className="ml-px h-4 w-4" />
-                        </span>
-                      </a>
+                      )}
                     </li>
                   ))}
                 </ul>
