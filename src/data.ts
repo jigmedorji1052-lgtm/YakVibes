@@ -12,6 +12,7 @@ export const IMAGES = {
   khengPortrait: "https://image.qwenlm.ai/generated-images/231fce56-4bf0-4389-9b62-7e7154e9f86e/_result.png",
   phubPortrait: "https://image.qwenlm.ai/generated-images/6e2a99ad-78a9-49a5-9abd-39821ae18c87/_result.png",
   valley: "https://image.qwenlm.ai/generated-images/a7fb84a9-6fc2-43b9-9fc3-b7024ac0b422/_result.png",
+  artistsHero: "https://i.imgur.com/5TYWAUS.png",
 };
 
 export type HomeTrack = {

@@ -144,22 +144,39 @@ export default function Artists({ onNavigate }: PageProps) {
     <>
       {/* ---------- Page header ---------- */}
       <section className="relative overflow-hidden bg-ink">
-        <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
-          <img src={IMAGES.valley} alt="" className="kenburns h-full w-full object-cover" />
+        <div className="absolute inset-0 overflow-hidden">
+          <img
+            src={IMAGES.artistsHero}
+            alt="Misty Bhutanese valley with terraced fields, prayer flags and a dzong at dawn"
+            className="kenburns h-full w-full object-cover object-center"
+          />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/75 via-ink/60 to-ink/85" aria-hidden="true" />
-        <div className="relative mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-32">
+        {/* Left-to-right scrim so text stays readable over the dzong */}
+        <div
+          className="absolute inset-0"
+          aria-hidden="true"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(26,15,10,0.82) 0%, rgba(26,15,10,0.55) 45%, rgba(26,15,10,0.35) 100%)",
+          }}
+        />
+        {/* Subtle bottom fade to seat the stats */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink/70 to-transparent"
+          aria-hidden="true"
+        />
+        <div className="relative mx-auto max-w-6xl px-5 pt-24 pb-36 sm:pb-40 md:py-32 md:pb-36">
           <Reveal className="max-w-3xl">
             <div className="flex items-center gap-4">
               <span className="h-px w-12 bg-gold/80" aria-hidden="true" />
-              <p className="font-display text-[0.7rem] font-bold uppercase tracking-[0.42em] text-gold">
+              <p className="font-display text-[0.7rem] font-bold uppercase tracking-[0.42em] text-gold [text-shadow:0_2px_14px_rgba(0,0,0,0.5)]">
                 The Artists
               </p>
             </div>
-            <h1 className="mt-6 text-[clamp(2.6rem,6vw,4.5rem)] font-extrabold leading-[1.05] text-cream">
+            <h1 className="mt-6 text-[clamp(2.6rem,6vw,4.5rem)] font-extrabold leading-[1.05] text-cream [text-shadow:0_2px_14px_rgba(0,0,0,0.5)]">
               The Voices Behind <em className="font-body font-medium italic text-gold">the Vibes</em>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream/85">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-cream/85 [text-shadow:0_2px_14px_rgba(0,0,0,0.5)]">
               Four musicians. Two traditions. One promise — that the songs of Bhutan reach the next
               generation exactly as the valleys taught them.
             </p>
