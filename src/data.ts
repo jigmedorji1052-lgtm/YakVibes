@@ -75,8 +75,8 @@ export const team: TeamMember[] = [
     name: "Kheng Sonam Dorji",
     role: "Drangyen Master & Vocalist",
     bio: "A living treasure of Bhutanese music, Kheng Sonam Dorji performed at the Smithsonian Folklife Festival and founded the Music of Bhutan Research Centre. His drangyen and voice keep the old songs alive for the next generation.",
-    image: "https://i.imgur.com/ilT0KMA.jpeg",
-    imageAlt: "Portrait of Kheng Sonam Dorji in traditional Bhutanese gho",
+    image: "https://i.imgur.com/Rf6I3Ss.jpeg?v=2",
+    imageAlt: "Portrait of Kheng Sonam Dorji, folk master of the drangyen, in traditional Bhutanese gho",
   },
   {
     name: "Sobit Singh",
@@ -118,8 +118,8 @@ export const artists: Artist[] = [
     name: "Kheng Sonam Dorji",
     tagline: "Folk master of the drangyen, carrying the songs of eastern Bhutan.",
     eyebrow: "01 · Folk Master — Kheng Region",
-    portrait: "https://i.imgur.com/ilT0KMA.jpeg",
-    portraitAlt: "Portrait of Kheng Sonam Dorji holding a drangyen lute on a wooden porch",
+    portrait: "https://i.imgur.com/Rf6I3Ss.jpeg?v=2",
+    portraitAlt: "Portrait of Kheng Sonam Dorji, folk master of the drangyen, in traditional Bhutanese gho",
     bio: [
       "Kheng Sonam Dorji is one of Bhutan's most beloved folk voices — a keeper of the songs that once travelled on foot between the valleys of eastern Bhutan. His heartfelt cover of the legendary Yak Laby, and his recordings of Zhingkham Maed Lu and Zhung Lam Lam Khar, have carried the Khengpa tradition to listeners far beyond the mountains that shaped it.",
       "With a drangyen resting across his knee, he sings the way the old singers did: unhurried, weathered, and full of the fields, roads and river crossings his songs describe. At YakVibes, his sessions are recorded as they were meant to be heard — close, warm, and without hurry.",
