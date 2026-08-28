@@ -6,6 +6,15 @@ type FooterProps = {
   onNavigate: (page: Route, section?: string) => void;
 };
 
+/* Email address assembled from character codes (same codes as HTML entities
+   &#99;&#111;&#110;&#116;&#97;&#99;&#116;&#64;&#121;&#97;&#107;&#118;&#105;&#98;&#101;&#115;&#46;&#98;&#116;)
+   so the literal address never appears in the source for spam bots to scrape.
+   Browsers don't decode entities inside JSX href attributes, hence this form. */
+const EMAIL_ADDRESS = String.fromCharCode(
+  99, 111, 110, 116, 97, 99, 116, 64, 121, 97, 107, 118, 105, 98, 101, 115, 46, 98, 116
+);
+const MAILTO_HREF = `mailto:${EMAIL_ADDRESS}`;
+
 export default function Footer({ onNavigate }: FooterProps) {
   return (
     <footer id="contact" className="relative overflow-hidden bg-burgundy text-cream">
@@ -58,12 +67,8 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <YoutubeIcon className="h-4.5 w-4.5" />
               </a>
               <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  alert("Please email us at: contact [at] yakvibes.bt");
-                }}
-                aria-label="Email YakVibes"
+                href={MAILTO_HREF}
+                aria-label="Email us"
                 className="grid h-10 w-10 place-items-center rounded-lg border border-cream/25 text-cream/85 transition duration-300 hover:-translate-y-0.5 hover:border-gold hover:bg-gold hover:text-burgundy"
               >
                 <MailIcon className="h-4.5 w-4.5" />
@@ -106,14 +111,7 @@ export default function Footer({ onNavigate }: FooterProps) {
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    alert("Please email us at: contact [at] yakvibes.bt");
-                  }}
-                  className="transition-colors hover:text-gold"
-                >
+                <a href={MAILTO_HREF} className="transition-colors hover:text-gold">
                   Email Us
                 </a>
               </li>
@@ -122,7 +120,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-cream/10 pt-6 text-sm text-cream/60 sm:flex-row">
-          <p>© 2026 YakVibes Bhutan. All rights reserved. Designed with intention.</p>
+          <p>© 2026 YakVibes Bhutan. All rights reserved.</p>
           <p className="font-tibetan text-[#F59E0B]/90">{mantraLine}</p>
         </div>
       </div>
