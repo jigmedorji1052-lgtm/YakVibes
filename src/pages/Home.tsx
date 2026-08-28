@@ -236,8 +236,8 @@ export default function Home({ onNavigate }: PageProps) {
             <div className="relative pb-6">
               <img
                 src={IMAGES.cham}
-                alt="A Bhutanese cham dancer in brocade silks and a carved mask"
-                className="w-full rounded-lg object-cover shadow-[24px_24px_0_#D97706]"
+                alt="Bhutanese musician playing the drangyen lute against a Himalayan valley backdrop"
+                className="w-full rounded-lg object-cover object-center shadow-[24px_24px_0_#D97706]"
               />
               <div className="float-soft absolute -bottom-2 -left-3 max-w-[250px] rounded-lg bg-ink px-5 py-4 text-left text-cream shadow-2xl md:-left-8">
                 <p className="font-display text-[0.62rem] font-bold uppercase tracking-[0.3em] text-gold">
