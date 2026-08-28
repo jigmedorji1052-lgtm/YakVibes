@@ -4,7 +4,7 @@ export const LINKS = {
 };
 
 export const IMAGES = {
-  hero: "https://image.qwenlm.ai/generated-images/2bdeeed9-cd65-420d-8166-73c506bd2b7d/_result.png",
+  hero: "https://i.imgur.com/QaXPHZm.png",
   whiteTara: "https://image.qwenlm.ai/generated-images/82108559-29be-493b-ba42-b05e3cc1f3c5/_result.png",
   medicineBuddha: "https://image.qwenlm.ai/generated-images/02b751ce-f8e4-4255-85bd-188f25714db3/_result.png",
   drangyen: "https://image.qwenlm.ai/generated-images/e0a932a0-8098-49b9-91e3-928d71dfc491/_result.png",
