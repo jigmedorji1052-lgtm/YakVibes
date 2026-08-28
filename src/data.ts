@@ -64,21 +64,21 @@ export const team: TeamMember[] = [
     name: "Ganga Ram",
     role: "Strings & Folk Melodies",
     bio: "Ganga Ram carries the music of the Himalayas on the auroo, guitar and metobobchu, weaving valley songs into every performance. He brought that sound to audiences at the Jodhpur RIFF festival and beyond.",
-    image: "/images/ganga-ram.jpg",
+    image: "https://i.imgur.com/sEdYbnZ.jpeg",
     imageAlt: "Portrait of Ganga Ram in traditional Bhutanese gho",
   },
   {
     name: "Kheng Sonam Dorji",
     role: "Drangyen Master & Vocalist",
     bio: "A living treasure of Bhutanese music, Kheng Sonam Dorji performed at the Smithsonian Folklife Festival and founded the Music of Bhutan Research Centre. His drangyen and voice keep the old songs alive for the next generation.",
-    image: "/images/kheng-sonam-dorji.jpg",
+    image: "https://i.imgur.com/Rf6I3Ss.jpeg?v=2",
     imageAlt: "Portrait of Kheng Sonam Dorji, folk master of the drangyen, in traditional Bhutanese gho",
   },
   {
     name: "Sobit Singh",
     role: "Bass, Keys & Vocals",
     bio: "A singer and songwriter followed by over half a million fans, Sobit bridges tradition and today across the lubang, bass guitar and keyboard. His groove gives YakVibes' ancient melodies a modern heartbeat.",
-    image: "/images/sobit-singh.jpg",
+    image: "https://i.imgur.com/SIugnAG.jpeg",
     imageAlt: "Portrait of Sobit Singh in traditional Bhutanese gho",
   },
 ];
@@ -114,7 +114,7 @@ export const artists: Artist[] = [
     name: "Kheng Sonam Dorji",
     tagline: "Folk master of the drangyen, carrying the songs of eastern Bhutan.",
     eyebrow: "01 · Folk Master — Kheng Region",
-    portrait: "/images/kheng-sonam-dorji.jpg",
+    portrait: "https://i.imgur.com/Rf6I3Ss.jpeg?v=2",
     portraitAlt: "Portrait of Kheng Sonam Dorji, folk master of the drangyen, in traditional Bhutanese gho",
     bio: [
       "Kheng Sonam Dorji is one of Bhutan's most beloved folk voices — a keeper of the songs that once travelled on foot between the valleys of eastern Bhutan. His heartfelt cover of the legendary Yak Laby, and his recordings of Zhingkham Maed Lu and Zhung Lam Lam Khar, have carried the Khengpa tradition to listeners far beyond the mountains that shaped it.",
@@ -143,7 +143,7 @@ export const artists: Artist[] = [
     name: "Pinaka Chakraborty",
     tagline: "An A Grade tabla artist who gives every chant its heartbeat.",
     eyebrow: "02 · Percussion — Kolkata to the Himalayas",
-    portrait: "/images/pinaka-chakraborty.jpg",
+    portrait: "https://i.imgur.com/fNhZcPy.jpeg",
     portraitAlt: "Portrait of Pinaka Chakraborty, tabla and percussion artist",
     bio: [
       "An A Grade artist with All India Radio and a national scholar, Pinaka Chakraborty has carried Indian rhythm from Kolkata to stages in Russia as a cultural ambassador. Trained in the classical tradition, he brings discipline and warmth to everything he touches.",
@@ -170,7 +170,7 @@ export const artists: Artist[] = [
     name: "Ganga Ram",
     tagline: "Strings that carry the folk melodies of the Himalayas.",
     eyebrow: "03 · Strings — The Sound of the Valleys",
-    portrait: "/images/ganga-ram.jpg",
+    portrait: "https://i.imgur.com/sEdYbnZ.jpeg",
     portraitAlt: "Portrait of Ganga Ram with his stringed instruments",
     bio: [
       "Ganga Ram Bhandari moves between the auroo, guitar and metobobchu, drawing out the folk melodies that define the Himalayan sound. His playing links the old ways with the new, giving every YakVibes performance its unmistakably Bhutanese voice.",
@@ -197,7 +197,7 @@ export const artists: Artist[] = [
     name: "Sobit Singh",
     tagline: "The voice and low end that bridges two worlds.",
     eyebrow: "04 · Groove & Voice — Tradition Meets Today",
-    portrait: "/images/sobit-singh.jpg",
+    portrait: "https://i.imgur.com/SIugnAG.jpeg",
     portraitAlt: "Portrait of Sobit Singh, singer and bassist",
     bio: [
       "A singer and songwriter followed by more than half a million fans, Sobit Singh — known as Sasang — moves effortlessly between the lubang, bass guitar, keyboard and aungli. His gift is making ancient melodies feel immediate.",
