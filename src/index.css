@@ -32,6 +32,10 @@
     border-radius: 4px;
   }
 
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+
   body {
     @apply bg-cream font-body text-ink antialiased;
     font-size: 1.0625rem;
@@ -349,6 +353,40 @@
   }
 }
 
+/* Track progress — thin saffron bar, filled live by the audio engine */
+.lr-progress {
+  position: relative;
+  height: 4px;
+  margin-top: 12px;
+  border-radius: 999px;
+  background: rgba(45, 42, 38, 0.12);
+  overflow: hidden;
+}
+.lr-progress-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  border-radius: 999px;
+  background: var(--color-primary);
+  transition: width 0.25s linear;
+}
+
+/* Gentle pulse on the play button while music is playing */
+.listening-room.playing .lr-btn-play {
+  animation: lrPulse 2.4s ease-in-out infinite;
+}
+@keyframes lrPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(194, 65, 12, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(194, 65, 12, 0);
+  }
+}
+
 .texture-dots-light {
   background-image: radial-gradient(rgba(253, 251, 247, 0.13) 1px, transparent 1px);
   background-size: 22px 22px;
@@ -363,7 +401,8 @@
   .flag-sway,
   .marquee-track,
   .cue-dot,
-  .float-soft {
+  .float-soft,
+  .listening-room.playing .lr-btn-play {
     animation: none !important;
   }
   .reveal {

@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
-/* Minimal typing for the slice of the SoundCloud Widget API we use. */
+/* Minimal typing for the slice of the Widget API we use. */
+type ProgressPayload = { relativePosition?: number };
+
 type SCWidget = {
-  bind: (event: string, handler: () => void) => void;
+  bind: (event: string, handler: (e?: ProgressPayload) => void) => void;
   unbind: (event: string) => void;
   toggle: () => void;
   next: () => void;
@@ -12,7 +14,13 @@ type SCWidget = {
 
 type SCNamespace = {
   Widget: ((el: HTMLIFrameElement) => SCWidget) & {
-    Events: { READY: string; PLAY: string; PAUSE: string; FINISH: string };
+    Events: {
+      READY: string;
+      PLAY: string;
+      PAUSE: string;
+      FINISH: string;
+      PLAY_PROGRESS: string;
+    };
   };
 };
 
@@ -22,7 +30,8 @@ declare global {
   }
 }
 
-const SC_SRC =
+/* Invisible audio engine — the playlist feed is never shown to visitors. */
+const AUDIO_FEED =
   "https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fjigme-dorji-62211426%2Fsets%2Fyakvibes-sacredsounds&color=%23C2410C&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false";
 
 export default function ListeningRoom() {
@@ -31,8 +40,9 @@ export default function ListeningRoom() {
   const [open, setOpen] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [track, setTrack] = useState("Sacred Sounds");
+  const [progress, setProgress] = useState(0);
 
-  // Bind the SoundCloud Widget API (SC.Widget on #scPlayer) once it is available.
+  // Bind the Widget API (SC.Widget on #scPlayer) once it is available.
   useEffect(() => {
     let disposed = false;
     let timer: number | undefined;
@@ -50,13 +60,19 @@ export default function ListeningRoom() {
       widget = SC.Widget(iframeRef.current);
       widgetRef.current = widget;
 
-      // When ready and whenever a track starts, surface the current title.
+      // Surface the current title when ready and whenever a track starts.
       widget.bind(SC.Widget.Events.READY, refreshTitle);
       widget.bind(SC.Widget.Events.PLAY, () => {
         setPlaying(true);
         refreshTitle();
       });
       widget.bind(SC.Widget.Events.PAUSE, () => setPlaying(false));
+      // Fill the progress bar from the engine's playback position.
+      widget.bind(SC.Widget.Events.PLAY_PROGRESS, (e) => {
+        if (typeof e?.relativePosition === "number") {
+          setProgress(Math.min(100, Math.max(0, e.relativePosition * 100)));
+        }
+      });
       // Auto-advance when a track finishes.
       widget.bind(SC.Widget.Events.FINISH, () => widget?.next());
       return true;
@@ -77,6 +93,7 @@ export default function ListeningRoom() {
           widget.unbind(SC.Widget.Events.READY);
           widget.unbind(SC.Widget.Events.PLAY);
           widget.unbind(SC.Widget.Events.PAUSE);
+          widget.unbind(SC.Widget.Events.PLAY_PROGRESS);
           widget.unbind(SC.Widget.Events.FINISH);
         } catch {
           /* player already torn down */
@@ -104,6 +121,13 @@ export default function ListeningRoom() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // The nav's "Listen Now" button opens the panel from anywhere on the site.
+  useEffect(() => {
+    const onOpenRequest = () => setOpen(true);
+    window.addEventListener("lr:open", onOpenRequest);
+    return () => window.removeEventListener("lr:open", onOpenRequest);
+  }, []);
+
   return (
     <aside
       id="listeningRoom"
@@ -112,7 +136,7 @@ export default function ListeningRoom() {
     >
       <div className="lr-panel" id="lrPanel">
         <div className="lr-header">
-          <span className="listening-room-label">Listening Room - Sacred Sounds</span>
+          <span className="listening-room-label">Listening Room · Sacred Sounds</span>
           <button className="lr-min" id="lrMin" aria-label="Minimize player" onClick={() => setOpen(false)}>
             ▾
           </button>
@@ -148,17 +172,22 @@ export default function ListeningRoom() {
           </span>
         </div>
 
+        {/* Track progress — filled live from the audio engine */}
+        <div className="lr-progress" aria-hidden="true">
+          <div className="lr-progress-fill" style={{ width: `${progress}%` }} />
+        </div>
+
+        {/* Invisible audio engine: 1×1, transparent, non-interactive — audio only */}
         <iframe
           id="scPlayer"
           ref={iframeRef}
-          width="100%"
-          height="166"
-          scrolling="no"
-          frameBorder="no"
+          aria-hidden="true"
+          tabIndex={-1}
           allow="autoplay"
           referrerPolicy="no-referrer"
-          title="SoundCloud player — YakVibes Sacred Sounds"
-          src={SC_SRC}
+          title="YakVibes audio engine"
+          src={AUDIO_FEED}
+          style={{ position: "absolute", width: 1, height: 1, opacity: 0, pointerEvents: "none", border: 0 }}
         />
       </div>
 

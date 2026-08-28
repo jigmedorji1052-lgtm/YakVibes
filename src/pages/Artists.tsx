@@ -18,9 +18,9 @@ const stats: Array<[string, string]> = [
 /* Each button label matches its real destination — never a mismatched link. */
 const artistButtons: Record<string, { label: string; href: string }> = {
   "kheng-sonam-dorji": { label: "Listen on YouTube", href: LINKS.youtube },
-  "pinaka-chakraborty": { label: "Hear on SoundCloud", href: LINKS.soundcloud },
-  "ganga-ram": { label: "Hear on SoundCloud", href: LINKS.soundcloud },
-  "sobit-singh": { label: "Follow on Instagram", href: LINKS.instagramSobit },
+  "pinaka-chakraborty": { label: "Listen on YouTube", href: LINKS.youtube },
+  "ganga-ram": { label: "Listen on YouTube", href: LINKS.youtube },
+  "sobit-singh": { label: "Listen on YouTube", href: LINKS.youtube },
 };
 
 function ArtistProfile({ artist, flip = false }: { artist: Artist; flip?: boolean }) {

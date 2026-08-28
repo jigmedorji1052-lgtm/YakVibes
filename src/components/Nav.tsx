@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { IMAGES, LINKS } from "../data";
-import { CloseIcon, ExternalIcon, MenuIcon } from "./icons";
+import { IMAGES } from "../data";
+import { CloseIcon, MenuIcon, PlayIcon } from "./icons";
 
 export type Route = "home" | "artists";
 
@@ -37,6 +37,12 @@ export default function Nav({ route, onNavigate }: NavProps) {
     onNavigate(page, section);
   };
 
+  // "Listen Now" opens the on-site Listening Room panel — no external navigation.
+  const openListeningRoom = () => {
+    setOpen(false);
+    window.dispatchEvent(new CustomEvent("lr:open"));
+  };
+
   const linkCls = (active: boolean) =>
     `font-display text-sm font-semibold tracking-wide transition-colors duration-300 hover:text-saffron ${
       active ? "text-saffron underline decoration-gold decoration-2 underline-offset-8" : "text-ink"
@@ -66,14 +72,12 @@ export default function Nav({ route, onNavigate }: NavProps) {
           <button onClick={() => go("home", "culture")} className={linkCls(route === "home" && activeSection === "culture")}>
             Culture
           </button>
-          <a
-            href={LINKS.youtube}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={openListeningRoom}
             className="inline-flex items-center gap-2 rounded-lg bg-saffron px-4 py-2.5 font-display text-sm font-semibold text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-saffron-deep"
           >
-            Listen Now <ExternalIcon className="h-4 w-4" />
-          </a>
+            Listen Now <PlayIcon className="h-4 w-4" />
+          </button>
         </div>
 
         <button
@@ -101,14 +105,12 @@ export default function Nav({ route, onNavigate }: NavProps) {
             <button onClick={() => go("home", "culture")} className="rounded-lg px-3 py-2.5 text-left font-display font-semibold text-ink transition hover:bg-cream hover:text-saffron">
               Culture
             </button>
-            <a
-              href={LINKS.youtube}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={openListeningRoom}
               className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-saffron px-4 py-3 font-display font-semibold text-white transition hover:bg-saffron-deep"
             >
-              Listen Now <ExternalIcon className="h-4 w-4" />
-            </a>
+              Listen Now <PlayIcon className="h-4 w-4" />
+            </button>
           </div>
         </div>
       )}
