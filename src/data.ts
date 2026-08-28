@@ -4,6 +4,7 @@ export const LINKS = {
 };
 
 export const IMAGES = {
+  logo: "https://i.imgur.com/bgJgxKq.png",
   hero: "https://i.imgur.com/QaXPHZm.png",
   whiteTara: "https://image.qwenlm.ai/generated-images/82108559-29be-493b-ba42-b05e3cc1f3c5/_result.png",
   medicineBuddha: "https://image.qwenlm.ai/generated-images/02b751ce-f8e4-4255-85bd-188f25714db3/_result.png",

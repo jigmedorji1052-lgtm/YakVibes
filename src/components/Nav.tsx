@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { LINKS } from "../data";
-import { CloseIcon, ExternalIcon, KnotMark, MenuIcon } from "./icons";
+import { IMAGES, LINKS } from "../data";
+import { CloseIcon, ExternalIcon, MenuIcon } from "./icons";
 
 export type Route = "home" | "artists";
 
@@ -25,16 +25,12 @@ export default function Nav({ route, onNavigate }: NavProps) {
   return (
     <header className="sticky top-0 z-50 border-b border-ink/10 bg-cream/90 backdrop-blur-md">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5 md:px-8">
-        <button onClick={() => go("home")} className="group flex items-center gap-3 text-left" aria-label="YakVibes Bhutan — home">
-          <span className="grid h-10 w-10 place-items-center rounded-lg bg-burgundy text-gold shadow-sm transition duration-300 group-hover:-rotate-6 group-hover:bg-saffron group-hover:text-cream">
-            <KnotMark className="h-6 w-6" />
-          </span>
-          <span>
-            <span className="block font-display text-lg font-extrabold leading-tight text-burgundy">YakVibes</span>
-            <span className="block font-display text-[0.6rem] font-bold uppercase tracking-[0.32em] text-saffron">
-              Bhutan · འབྲུག
-            </span>
-          </span>
+        <button onClick={() => go("home")} className="group flex items-center text-left" aria-label="YakVibes Bhutan — home">
+          <img
+            src={IMAGES.logo}
+            alt="YakVibes Bhutan logo"
+            className="h-9 w-auto max-h-9 object-contain transition duration-300 group-hover:scale-[1.03] md:h-12 md:max-h-12"
+          />
         </button>
 
         <div className="hidden items-center gap-8 md:flex">

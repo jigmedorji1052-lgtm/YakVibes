@@ -1,4 +1,4 @@
-import { LINKS, mantraLine } from "../data";
+import { IMAGES, LINKS, mantraLine } from "../data";
 import type { Route } from "./Nav";
 import { FacebookIcon, KnotMark, MailIcon, YoutubeIcon } from "./icons";
 
@@ -20,6 +20,11 @@ export default function Footer({ onNavigate }: FooterProps) {
       <div className="relative mx-auto max-w-6xl px-5 pb-24 pt-16 md:px-8 md:pb-8 md:pt-20">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
+            <img
+              src={IMAGES.logo}
+              alt="YakVibes Bhutan logo"
+              className="mb-4 max-h-10 w-auto object-contain [filter:drop-shadow(0_0_14px_rgba(253,251,247,0.35))]"
+            />
             <div className="flex items-center gap-3">
               <span className="grid h-10 w-10 place-items-center rounded-lg bg-cream/10 text-gold">
                 <KnotMark className="h-6 w-6" />
