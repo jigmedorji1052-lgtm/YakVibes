@@ -13,6 +13,18 @@ export default function App() {
   const [route, setRoute] = useState<Route>(readRoute);
   const pendingSection = useRef<string | null>(null);
 
+  // Image protection: suppress the right-click menu only when it targets an
+  // image, so "Open image in new tab" is never offered. All other context
+  // menus behave normally.
+  useEffect(() => {
+    const onContextMenu = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target && target.closest("img")) e.preventDefault();
+    };
+    document.addEventListener("contextmenu", onContextMenu);
+    return () => document.removeEventListener("contextmenu", onContextMenu);
+  }, []);
+
   useEffect(() => {
     const onHash = () => {
       const next = readRoute();

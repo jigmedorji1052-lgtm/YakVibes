@@ -54,6 +54,12 @@
     background: var(--color-gold);
     color: var(--color-cream);
   }
+
+  /* Image protection: no drag-to-new-tab, no selection */
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
 }
 
 /* ---------- Signature motion ---------- */
