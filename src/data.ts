@@ -1,6 +1,8 @@
 export const LINKS = {
   youtube: "https://www.youtube.com/@YakVibes_Bhutan",
   facebook: "https://www.facebook.com/YakVibe",
+  soundcloud: "https://soundcloud.com/jigme-dorji-62211426/sets/yakvibes-sacredsounds",
+  instagramSobit: "https://www.instagram.com/sobit_sobi/",
 };
 
 export const IMAGES = {

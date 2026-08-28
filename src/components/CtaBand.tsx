@@ -20,7 +20,7 @@ export default function CtaBand({ title, body, label }: CtaBandProps) {
       </span>
       <div className="relative mx-auto max-w-3xl px-5 py-20 md:px-8 md:py-24">
         <Reveal>
-          <p className="font-display text-xs font-bold uppercase tracking-[0.4em] text-gold">Join the Circle</p>
+          <p className="font-display text-xs font-bold uppercase tracking-[0.4em] text-[#F59E0B]">Join the Circle</p>
           <h2 className="mt-4 text-[clamp(1.9rem,4vw,2.8rem)] font-bold text-cream">{title}</h2>
           <p className="mx-auto mt-5 max-w-xl text-cream/80">{body}</p>
           <a

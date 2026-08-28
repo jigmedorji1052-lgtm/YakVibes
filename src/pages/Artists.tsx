@@ -15,7 +15,16 @@ const stats: Array<[string, string]> = [
   ["1", "shared mission — preservation"],
 ];
 
+/* Each button label matches its real destination — never a mismatched link. */
+const artistButtons: Record<string, { label: string; href: string }> = {
+  "kheng-sonam-dorji": { label: "Listen on YouTube", href: LINKS.youtube },
+  "pinaka-chakraborty": { label: "Hear on SoundCloud", href: LINKS.soundcloud },
+  "ganga-ram": { label: "Hear on SoundCloud", href: LINKS.soundcloud },
+  "sobit-singh": { label: "Follow on Instagram", href: LINKS.instagramSobit },
+};
+
 function ArtistProfile({ artist, flip = false }: { artist: Artist; flip?: boolean }) {
+  const cta = artistButtons[artist.id] ?? { label: "Listen on YouTube", href: LINKS.youtube };
   return (
     <section id={artist.id} className="relative scroll-mt-24 py-20 md:py-24">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
@@ -119,12 +128,13 @@ function ArtistProfile({ artist, flip = false }: { artist: Artist; flip?: boolea
               </div>
 
               <a
-                href={LINKS.youtube}
+                href={cta.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`${cta.label} — ${artist.name}`}
                 className="mt-8 inline-flex items-center gap-2.5 rounded-lg bg-saffron px-6 py-3 font-display font-semibold text-white shadow-md shadow-saffron/25 transition duration-300 hover:-translate-y-0.5 hover:bg-saffron-deep"
               >
-                Listen on YouTube <ExternalIcon className="h-4 w-4" />
+                {cta.label} <ExternalIcon className="h-4 w-4" />
               </a>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IMAGES, LINKS } from "../data";
 import { CloseIcon, ExternalIcon, MenuIcon } from "./icons";
 
@@ -11,6 +11,26 @@ type NavProps = {
 
 export default function Nav({ route, onNavigate }: NavProps) {
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+
+  // Scroll-spy: keep the nav highlight on the section currently in view (Home page).
+  useEffect(() => {
+    if (route !== "home") return;
+    const ids = ["home", "music", "artists", "culture"];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        });
+      },
+      { rootMargin: "-35% 0px -55% 0px", threshold: 0 }
+    );
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [route]);
 
   const go = (page: Route, section?: string) => {
     setOpen(false);
@@ -34,16 +54,16 @@ export default function Nav({ route, onNavigate }: NavProps) {
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          <button onClick={() => go("home")} className={linkCls(route === "home")}>
+          <button onClick={() => go("home")} className={linkCls(route === "home" && activeSection === "home")}>
             Home
           </button>
-          <button onClick={() => go("home", "music")} className={linkCls(false)}>
+          <button onClick={() => go("home", "music")} className={linkCls(route === "home" && activeSection === "music")}>
             Music
           </button>
           <button onClick={() => go("artists")} className={linkCls(route === "artists")}>
             Artists
           </button>
-          <button onClick={() => go("home", "culture")} className={linkCls(false)}>
+          <button onClick={() => go("home", "culture")} className={linkCls(route === "home" && activeSection === "culture")}>
             Culture
           </button>
           <a

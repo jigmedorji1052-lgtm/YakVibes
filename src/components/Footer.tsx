@@ -23,6 +23,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             <img
               src={IMAGES.logo}
               alt="YakVibes Bhutan logo"
+              loading="lazy"
               className="mb-4 max-h-10 w-auto object-contain [filter:drop-shadow(0_0_14px_rgba(253,251,247,0.35))]"
             />
             <div className="flex items-center gap-3">
@@ -71,7 +72,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           </div>
 
           <div>
-            <h4 className="font-display text-xs font-bold uppercase tracking-[0.28em] text-gold">Explore</h4>
+            <h4 className="font-display text-xs font-bold uppercase tracking-[0.28em] text-[#F59E0B]">Explore</h4>
             <ul className="mt-5 space-y-3">
               <li>
                 <button onClick={() => onNavigate("home", "music")} className="transition-colors hover:text-gold">
@@ -92,7 +93,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           </div>
 
           <div>
-            <h4 className="font-display text-xs font-bold uppercase tracking-[0.28em] text-gold">Connect</h4>
+            <h4 className="font-display text-xs font-bold uppercase tracking-[0.28em] text-[#F59E0B]">Connect</h4>
             <ul className="mt-5 space-y-3">
               <li>
                 <a href={LINKS.facebook} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-gold">
@@ -122,7 +123,7 @@ export default function Footer({ onNavigate }: FooterProps) {
 
         <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-cream/10 pt-6 text-sm text-cream/60 sm:flex-row">
           <p>© 2026 YakVibes Bhutan. All rights reserved. Designed with intention.</p>
-          <p className="font-tibetan text-gold/80">{mantraLine}</p>
+          <p className="font-tibetan text-[#F59E0B]/90">{mantraLine}</p>
         </div>
       </div>
     </footer>

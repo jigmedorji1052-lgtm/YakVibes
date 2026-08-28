@@ -127,7 +127,7 @@ export default function Home({ onNavigate }: PageProps) {
                       {track.artist}
                     </span>
                     <h3 className="mt-1.5 text-xl font-bold">{track.title}</h3>
-                    <p className="mt-2.5 flex-1 text-[0.98rem] leading-relaxed text-ink-soft">{track.description}</p>
+                    <p className="mt-2.5 flex-1 text-base leading-relaxed text-ink-soft">{track.description}</p>
                     <a
                       href={track.externalHref}
                       target="_blank"
@@ -185,7 +185,7 @@ export default function Home({ onNavigate }: PageProps) {
                       {member.name}
                     </h3>
                     <span className="mt-2.5 mb-3 h-0.5 w-10 rounded-full bg-gold transition-all duration-500 group-hover:w-16" aria-hidden="true" />
-                    <p className="flex-1 text-[0.95rem] leading-relaxed text-ink-soft">{member.bio}</p>
+                    <p className="flex-1 text-base leading-relaxed text-ink-soft">{member.bio}</p>
                   </div>
                 </article>
               </Reveal>
@@ -237,6 +237,8 @@ export default function Home({ onNavigate }: PageProps) {
               <img
                 src={IMAGES.cham}
                 alt="Bhutanese musician playing the drangyen lute against a Himalayan valley backdrop"
+                loading="lazy"
+                decoding="async"
                 className="w-full rounded-lg object-cover object-center shadow-[24px_24px_0_#D97706]"
               />
               <div className="float-soft absolute -bottom-2 -left-3 max-w-[250px] rounded-lg bg-ink px-5 py-4 text-left text-cream shadow-2xl md:-left-8">
