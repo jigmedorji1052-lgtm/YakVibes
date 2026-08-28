@@ -51,6 +51,22 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-cream font-body text-ink">
+      {/* Accessibility: skip straight to the page content */}
+      <a
+        href="#main-content"
+        onClick={(e) => {
+          e.preventDefault();
+          const main = document.getElementById("main-content");
+          if (main) {
+            main.setAttribute("tabindex", "-1");
+            main.focus({ preventScroll: false });
+            main.scrollIntoView();
+          }
+        }}
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[1100] focus:rounded-lg focus:bg-saffron focus:px-5 focus:py-3 focus:font-display focus:font-semibold focus:text-white"
+      >
+        Skip to content
+      </a>
       {/* Ambient layered background */}
       <div
         className="pointer-events-none fixed inset-0 -z-10"
@@ -62,7 +78,9 @@ export default function App() {
       />
 
       <Nav route={route} onNavigate={navigate} />
-      <main>{route === "home" ? <Home onNavigate={navigate} /> : <Artists onNavigate={navigate} />}</main>
+      <main id="main-content" className="outline-none">
+        {route === "home" ? <Home onNavigate={navigate} /> : <Artists onNavigate={navigate} />}
+      </main>
       <Footer onNavigate={navigate} />
       <ListeningRoom />
     </div>

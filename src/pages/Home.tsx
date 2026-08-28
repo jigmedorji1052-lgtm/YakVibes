@@ -3,6 +3,7 @@ import CtaBand from "../components/CtaBand";
 import Mantra from "../components/Mantra";
 import PrayerFlags from "../components/PrayerFlags";
 import Reveal from "../components/Reveal";
+import VideoFacade from "../components/VideoFacade";
 import {
   ArrowRightIcon,
   DranyenIcon,
@@ -111,16 +112,9 @@ export default function Home({ onNavigate }: PageProps) {
             {homeTracks.map((track, i) => (
               <Reveal key={track.title} delay={i * 130} className="h-full">
                 <article className="group flex h-full flex-col overflow-hidden rounded-lg bg-paper shadow-[0_4px_18px_rgba(45,42,38,0.07)] ring-1 ring-ink/5 transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_44px_rgba(127,29,29,0.16)]">
-                  {/* Responsive 16:9 YouTube embed */}
+                  {/* 16:9 click-to-load facade — iframe loads only on play */}
                   <div className="relative aspect-video w-full overflow-hidden bg-burgundy">
-                    <iframe
-                      src={`https://www.youtube.com/embed/${track.videoId}`}
-                      title={`${track.title} — ${track.artist}`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      loading="lazy"
-                      className="absolute inset-0 h-full w-full border-0"
-                    />
+                    <VideoFacade videoId={track.videoId} title={track.title} artist={track.artist} />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <span className="font-display text-[0.78rem] font-bold uppercase tracking-[0.2em] text-saffron">

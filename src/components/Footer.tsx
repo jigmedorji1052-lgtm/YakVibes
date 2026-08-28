@@ -120,7 +120,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-cream/10 pt-6 text-sm text-cream/60 sm:flex-row">
-          <p>© 2026 YakVibes Bhutan. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} YakVibes Bhutan. All rights reserved.</p>
           <p className="font-tibetan text-[#F59E0B]/90">{mantraLine}</p>
         </div>
       </div>
