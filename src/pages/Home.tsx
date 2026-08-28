@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { Route } from "../components/Nav";
 import CtaBand from "../components/CtaBand";
 import Mantra from "../components/Mantra";
@@ -167,16 +166,27 @@ export default function Home({ onNavigate }: PageProps) {
 
           <div className="mt-14 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-8">
             {team.map((member, i) => (
-              <Reveal key={member.initials} delay={i * 110} className="h-full">
-                <article className="group flex h-full flex-col rounded-lg bg-paper p-8 text-center shadow-[0_4px_6px_rgba(0,0,0,0.05)] ring-1 ring-ink/5 transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(127,29,29,0.14)]">
-                  <div className="mx-auto mb-4 grid h-24 w-24 place-items-center rounded-full border-4 border-gold bg-burgundy font-display text-[1.75rem] font-bold text-gold transition duration-500 group-hover:rotate-3 group-hover:scale-105">
-                    {member.initials}
+              <Reveal key={member.name} delay={i * 110} className="h-full">
+                <article className="group flex h-full flex-col overflow-hidden rounded-lg bg-paper shadow-[0_4px_6px_rgba(0,0,0,0.05)] ring-1 ring-ink/5 transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_40px_rgba(127,29,29,0.14)]">
+                  <div className="relative aspect-[4/5] overflow-hidden">
+                    <img
+                      src={member.image}
+                      alt={member.imageAlt}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.05]"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-ink/55 to-transparent" aria-hidden="true" />
                   </div>
-                  <h3 className="text-xl font-bold">{member.name}</h3>
-                  <span className="mb-4 mt-1.5 block font-display text-[0.9rem] font-semibold uppercase tracking-[0.05em] text-saffron">
-                    {member.role}
-                  </span>
-                  <p className="flex-1 text-[0.95rem] leading-relaxed text-ink-soft">{member.bio}</p>
+                  <div className="flex flex-1 flex-col p-6">
+                    <span className="font-display text-[0.72rem] font-bold uppercase tracking-[0.14em] text-saffron">
+                      {member.role}
+                    </span>
+                    <h3 className="mt-1.5 text-xl font-bold transition-colors duration-300 group-hover:text-burgundy">
+                      {member.name}
+                    </h3>
+                    <span className="mt-2.5 mb-3 h-0.5 w-10 rounded-full bg-gold transition-all duration-500 group-hover:w-16" aria-hidden="true" />
+                    <p className="flex-1 text-[0.95rem] leading-relaxed text-ink-soft">{member.bio}</p>
+                  </div>
                 </article>
               </Reveal>
             ))}
