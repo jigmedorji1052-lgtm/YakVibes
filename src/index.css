@@ -1,0 +1,422 @@
+@import "tailwindcss";
+
+/* ==========================================================
+   YakVibes Bhutan — Design Tokens
+   Saffron (robes) · Burgundy (architecture) · Gold (light)
+   Outfit display · Lora body · Noto Serif Tibetan accents
+   ========================================================== */
+@theme {
+  --color-cream: #fdfbf7;
+  --color-paper: #ffffff;
+  --color-ink: #2d2a26;
+  --color-ink-soft: #5c5855;
+  --color-saffron: #c2410c;
+  --color-saffron-deep: #9a3412;
+  --color-burgundy: #7f1d1d;
+  --color-burgundy-deep: #571313;
+  --color-gold: #d97706;
+
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Lora", Georgia, serif;
+  --font-tibetan: "Noto Serif Tibetan", "Lora", serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+
+  body {
+    @apply bg-cream font-body text-ink antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-burgundy;
+    line-height: 1.15;
+  }
+
+  ::selection {
+    background: var(--color-gold);
+    color: var(--color-cream);
+  }
+
+  /* Image protection: no drag-to-new-tab, no selection */
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+}
+
+/* ---------- Signature motion ---------- */
+
+.kenburns {
+  animation: kenburns 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes kenburns {
+  from {
+    transform: scale(1.02) translateY(0);
+  }
+  to {
+    transform: scale(1.12) translateY(-1.6%);
+  }
+}
+
+.flag-sway {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+  animation: sway 4.6s ease-in-out infinite;
+}
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-4.5deg);
+  }
+  50% {
+    transform: rotate(4.5deg);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marquee 44s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.cue-dot {
+  animation: cue 1.9s cubic-bezier(0.4, 0, 0.4, 1) infinite;
+}
+@keyframes cue {
+  0% {
+    transform: translateY(-120%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(320%);
+    opacity: 0;
+  }
+}
+
+.float-soft {
+  animation: floatSoft 7s ease-in-out infinite;
+}
+@keyframes floatSoft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ---------- Textures ---------- */
+
+/* ---------- Listening Room — collapsible player ---------- */
+:root {
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --color-surface: #ffffff;
+  --color-primary: #c2410c;
+  --color-primary-hover: #9a3412;
+  --color-secondary: #7f1d1d;
+  --color-text: #2d2a26;
+  --color-text-light: #5c5855;
+  --font-heading: "Outfit", sans-serif;
+  --border-radius: 8px;
+}
+
+.listening-room {
+  position: fixed;
+  right: var(--space-md);
+  bottom: var(--space-md);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-sm);
+}
+
+/* Round saffron toggle */
+.lr-toggle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(45, 42, 38, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.lr-toggle:hover {
+  transform: scale(1.06);
+  background: var(--color-primary-hover);
+}
+.lr-toggle .lr-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+/* Tiny equalizer bars — only animate while music plays */
+.lr-eq {
+  position: absolute;
+  bottom: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2px;
+  height: 8px;
+  align-items: flex-end;
+}
+.lr-eq i {
+  width: 3px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+.listening-room.playing .lr-eq i {
+  animation: lrBounce 1s infinite ease-in-out;
+}
+.listening-room.playing .lr-eq i:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.listening-room.playing .lr-eq i:nth-child(3) {
+  animation-delay: 0.4s;
+}
+@keyframes lrBounce {
+  0%,
+  100% {
+    height: 3px;
+  }
+  50% {
+    height: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .listening-room.playing .lr-eq i {
+    animation: none;
+  }
+}
+
+/* Panel card — hidden by default, revealed when parent has .open */
+.lr-panel {
+  width: 360px;
+  max-width: calc(100vw - 2rem);
+  background: var(--color-surface);
+  border-radius: var(--border-radius);
+  box-shadow: 0 12px 32px rgba(45, 42, 38, 0.28);
+  padding: var(--space-sm);
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s;
+}
+.listening-room.open .lr-panel {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.lr-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xs);
+}
+.listening-room-label {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+.lr-min {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--color-text-light);
+  padding: 10px 12px;
+  border-radius: 4px;
+}
+.lr-min:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--color-text);
+}
+
+/* Transport controls */
+.lr-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
+}
+.lr-btn {
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-heading);
+  line-height: 1;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.15s ease;
+}
+.lr-btn:active {
+  transform: scale(0.92);
+}
+.lr-btn-skip {
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 2px solid var(--color-secondary);
+  color: var(--color-secondary);
+  font-size: 1rem;
+  font-weight: 700;
+}
+.lr-btn-skip:hover {
+  background: var(--color-secondary);
+  color: #fff;
+}
+.lr-btn-play {
+  width: 44px;
+  height: 44px;
+  background: var(--color-primary);
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+}
+.lr-btn-play:hover {
+  background: var(--color-primary-hover);
+}
+.lr-track {
+  flex: 1;
+  min-width: 0;
+  margin-left: var(--space-xs);
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  .listening-room {
+    right: var(--space-sm);
+    bottom: var(--space-sm);
+  }
+}
+
+/* Track progress — thin saffron bar, filled live by the audio engine */
+.lr-progress {
+  position: relative;
+  height: 4px;
+  margin-top: 12px;
+  border-radius: 999px;
+  background: rgba(45, 42, 38, 0.12);
+  overflow: hidden;
+}
+.lr-progress-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  border-radius: 999px;
+  background: var(--color-primary);
+  transition: width 0.25s linear;
+}
+
+/* Gentle pulse on the play button while music is playing */
+.listening-room.playing .lr-btn-play {
+  animation: lrPulse 2.4s ease-in-out infinite;
+}
+@keyframes lrPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(194, 65, 12, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(194, 65, 12, 0);
+  }
+}
+
+.texture-dots-light {
+  background-image: radial-gradient(rgba(253, 251, 247, 0.13) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.texture-dots-dark {
+  background-image: radial-gradient(rgba(45, 42, 38, 0.055) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kenburns,
+  .flag-sway,
+  .marquee-track,
+  .cue-dot,
+  .float-soft,
+  .listening-room.playing .lr-btn-play {
+    animation: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
