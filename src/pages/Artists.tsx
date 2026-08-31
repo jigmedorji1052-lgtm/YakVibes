@@ -44,7 +44,7 @@ function ArtistProfile({ artist, flip = false }: { artist: Artist; flip?: boolea
                     src={artist.portrait}
                     alt={artist.portraitAlt}
                     loading="lazy"
-                    className="w-full rounded-lg object-cover shadow-[22px_22px_0_#D97706] transition duration-700 ease-out hover:scale-[1.03]"
+                    className="w-full rounded-lg object-cover shadow-[14px_14px_0_#D97706] transition duration-700 ease-out hover:scale-[1.03] md:shadow-[22px_22px_0_#D97706]"
                   />
                   <div className="absolute inset-x-0 bottom-0 rounded-b-lg bg-gradient-to-t from-ink/90 via-ink/40 to-transparent p-5 pt-16">
                     <p className="font-display text-lg font-bold text-cream">{artist.name}</p>
@@ -60,17 +60,17 @@ function ArtistProfile({ artist, flip = false }: { artist: Artist; flip?: boolea
                 {artist.eyebrow}
               </p>
               <h2 className="mt-3 text-[clamp(2rem,4.5vw,3.2rem)] font-extrabold">{artist.name}</h2>
-              <p className="mt-2 font-body italic leading-relaxed text-ink-soft">{artist.tagline}</p>
+              <p className="mt-3 font-body italic leading-relaxed text-ink-soft md:mt-2">{artist.tagline}</p>
 
-              <div className="mt-6 space-y-4">
+              <div className="mt-7 space-y-5 md:mt-6 md:space-y-4">
                 {artist.bio.map((paragraph) => (
-                  <p key={paragraph.slice(0, 32)} className="text-ink-soft">
+                  <p key={paragraph.slice(0, 32)} className="leading-[1.8] text-ink-soft md:leading-[1.7]">
                     {paragraph}
                   </p>
                 ))}
               </div>
 
-              <dl className="mt-9 grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4">
+              <dl className="mt-10 grid grid-cols-2 gap-x-5 gap-y-7 sm:grid-cols-4 md:mt-9 md:gap-x-6 md:gap-y-6">
                 {artist.facts.map((fact) => (
                   <div key={fact.label} className="border-l-2 border-gold pl-3">
                     <dt className="font-display text-[0.62rem] font-bold uppercase tracking-[0.22em] text-ink-soft">
@@ -82,7 +82,7 @@ function ArtistProfile({ artist, flip = false }: { artist: Artist; flip?: boolea
               </dl>
 
               {artist.quote && (
-                <blockquote className="mt-10 border-l-4 border-gold pl-5">
+                <blockquote className="mt-11 border-l-4 border-gold pl-5 md:mt-10">
                   <p className="font-body text-lg italic leading-relaxed text-burgundy">
                     &ldquo;{artist.quote}&rdquo;
                   </p>
@@ -93,7 +93,7 @@ function ArtistProfile({ artist, flip = false }: { artist: Artist; flip?: boolea
               )}
 
               {/* Recordings / highlights */}
-              <div className="mt-11">
+              <div className="mt-12 md:mt-11">
                 <div className="flex flex-wrap items-end justify-between gap-2 border-b-2 border-burgundy/80 pb-2.5">
                   <h3 className="font-display text-sm font-bold uppercase tracking-[0.26em] text-burgundy">
                     {artist.listLabel}
@@ -109,13 +109,15 @@ function ArtistProfile({ artist, flip = false }: { artist: Artist; flip?: boolea
                 </div>
                 <ul className="divide-y divide-ink/10">
                   {artist.discography.map((item, i) => (
-                    <li key={item.title} className="flex items-center gap-4 py-3.5">
+                    <li key={item.title} className="flex items-center gap-4 py-4 md:py-3.5">
                       <span className="w-7 shrink-0 font-display text-sm font-bold text-gold">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <span className="min-w-0 flex-1">
-                        <span className="block truncate font-display font-semibold text-ink">{item.title}</span>
-                        <span className="block truncate font-body text-sm italic text-ink-soft">{item.note}</span>
+                        <span className="block font-display font-semibold text-ink md:truncate">{item.title}</span>
+                        <span className="block font-body text-sm italic leading-relaxed text-ink-soft md:truncate">
+                          {item.note}
+                        </span>
                       </span>
                       {item.duration && (
                         <span className="hidden shrink-0 font-display text-xs font-semibold tracking-[0.15em] text-ink-soft sm:block">
@@ -132,7 +134,7 @@ function ArtistProfile({ artist, flip = false }: { artist: Artist; flip?: boolea
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${cta.label} — ${artist.name}`}
-                className="mt-8 inline-flex items-center gap-2.5 rounded-lg bg-saffron px-6 py-3 font-display font-semibold text-white shadow-md shadow-saffron/25 transition duration-300 hover:-translate-y-0.5 hover:bg-saffron-deep"
+                className="mt-9 inline-flex w-full items-center justify-center gap-2.5 rounded-lg bg-saffron px-6 py-3 font-display font-semibold text-white shadow-md shadow-saffron/25 transition duration-300 hover:-translate-y-0.5 hover:bg-saffron-deep md:mt-8 md:w-auto md:justify-start"
               >
                 {cta.label} <ExternalIcon className="h-4 w-4" />
               </a>
