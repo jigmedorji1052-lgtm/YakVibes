@@ -22,7 +22,7 @@ export const homeTracks: HomeTrack[] = [
   {
     title: "Medicine Buddha Chant",
     artist: "Kheng Sonam Dorji",
-    videoId: "2QlSvS0imdI",
+    videoId: "kHp39O2N2eY",
     externalHref: "https://www.youtube.com/watch?v=dvKjqodPZEo",
     description: "A devotional mantra for spiritual growth and inner tranquility.",
   },
