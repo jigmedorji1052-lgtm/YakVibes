@@ -21,10 +21,11 @@ export type HomeTrack = {
 export const homeTracks: HomeTrack[] = [
   {
     title: "Medicine Buddha Chant",
-    artist: "Kheng Sonam Dorji",
-    videoId: "2QlSvS0imdI",
-    externalHref: "https://www.youtube.com/watch?v=dvKjqodPZEo",
-    description: "A devotional mantra for spiritual growth and inner tranquility.",
+    artist: "YakVibes Bhutan",
+    videoId: "kHp39O2N2eY",
+    externalHref: "https://www.youtube.com/watch?v=kHp39O2N2eY",
+    description:
+      "From the 'Beyond Bhutan' series — a devotional Sangay Menlha (Medicine Buddha) mantra for healing and inner tranquility.",
   },
   {
     title: "Drangyen Majay",
